@@ -1,0 +1,183 @@
+ [
+   {
+     "id": 1,
+     "title": "Learn English Like a Baby",
+     "img_url":
+       "https://genlish.com/wp-content/uploads/2017/04/English1-1024x690.jpg",
+     "summary":
+       "one - Do you remember learning your native language? Probably not. That’s because as children we pick up language automatically. This video explores how babies learn to speak a language, then lists three ways second language learners can imitate their success. As the video shows, babies focus more on the stress and the feeling of the words first. This allows them to express and communicate in some way before even learning the proper words",
+     "content": "this is the full lesson content 1",
+     "url": "https://www.youtube.com/watch?v=QY1Hcm-RtG4",
+     "rating": 23,
+     "questions": [
+  {
+    "text": "one - What flag is this?",
+    "image": "/images/flag.jpeg",
+    "choices": [
+      { "id": 0, "answer": "Italy", "isAnswer": false },
+      { "id": 1, "answer": "Sweden", "isAnswer": false },
+      { "id": 2, "answer": "China", "isAnswer": false },
+      { "id": 3, "answer": "United Kingdom", "isAnswer": true }
+    ]
+  },
+  {
+    "text": "Her thinking leans ____ democracy?",
+    "choices": [
+      { "id": 0, "answer": "with", "isAnswer": false },
+      { "id": 1, "answer": "for", "isAnswer": false },
+      { "id": 2, "answer": "in", "isAnswer": false },
+      { "id": 3, "answer": "towards", "isAnswer": true }
+    ]
+  },
+  {
+    "text": "I ____ never seen such a picture before?",
+    "choices": [
+      { "id": 0, "answer": "has", "isAnswer": false },
+      { "id": 1, "answer": "have", "isAnswer": true },
+      { "id": 2, "answer": "was", "isAnswer": false },
+      { "id": 3, "answer": "were", "isAnswer": false }
+    ]
+  },
+  {
+    "text": "What does this flag?",
+    "image": "/images/city.jpeg",
+    "choices": [
+      { "id": 0, "answer": "Manchester", "isAnswer": false },
+      { "id": 1, "answer": "Leeds", "isAnswer": false },
+      { "id": 2, "answer": "London", "isAnswer": true },
+      { "id": 3, "answer": "Norwich", "isAnswer": false }
+    ]
+  },
+  {
+    "text": "The doctor gave me a ______ for some medicine yesterday?",
+    "choices": [
+      { "id": 0, "answer": "receipt", "isAnswer": false },
+      { "id": 1, "answer": "prescription", "isAnswer": true },
+      { "id": 2, "answer": "note", "isAnswer": false },
+      { "id": 3, "answer": "description", "isAnswer": false }
+    ]
+  }
+]
+   },
+   {
+     "id": 2,
+     "title": "Auxiliary and Phrasal Verbs",
+    "img_url":
+       "https://contenthub-static.grammarly.com/blog/wp-content/uploads/2020/10/ways-to-learn-english-fast.jpg",
+     "summary":
+       " two - The instructor focuses a lot on the different forms of these verbs. She also talks about when to use contractions and when the verbs are absent in the sentence. The video is extremely useful for beginners as each section is filled with examples where the important words are highlighted in red. While watching the video, be sure to pause when the examples are shown. Notice how the rules are applied and make sure you understand them.",
+     "content": "this is the full lesson content 2",
+     "url": "https://www.youtube.com/watch?v=A2ncygNMaFo",
+     "rating": 230,
+     "questions": [
+  {
+    "text": "two - What flag is this?",
+    "image": "/images/flag.jpeg",
+    "choices": [
+      { "id": 0, "answer": "Italy", "isAnswer": false },
+      { "id": 1, "answer": "Sweden", "isAnswer": false },
+      { "id": 2, "answer": "China", "isAnswer": false },
+      { "id": 3, "answer": "United Kingdom", "isAnswer": true }
+    ]
+  },
+  {
+    "text": "Her thinking leans ____ democracy?",
+    "choices": [
+      { "id": 0, "answer": "with", "isAnswer": false },
+      { "id": 1, "answer": "for", "isAnswer": false },
+      { "id": 2, "answer": "in", "isAnswer": false },
+      { "id": 3, "answer": "towards", "isAnswer": true }
+    ]
+  },
+  {
+    "text": "I ____ never seen such a picture before?",
+    "choices": [
+      { "id": 0, "answer": "has", "isAnswer": false },
+      { "id": 1, "answer": "have", "isAnswer": true },
+      { "id": 2, "answer": "was", "isAnswer": false },
+      { "id": 3, "answer": "were", "isAnswer": false }
+    ]
+  },
+  {
+    "text": "What does this flag?",
+    "image": "/images/city.jpeg",
+    "choices": [
+      { "id": 0, "answer": "Manchester", "isAnswer": false },
+      { "id": 1, "answer": "Leeds", "isAnswer": false },
+      { "id": 2, "answer": "London", "isAnswer": true },
+      { "id": 3, "answer": "Norwich", "isAnswer": false }
+    ]
+  },
+  {
+    "text": "The doctor gave me a ______ for some medicine yesterday?",
+    "choices": [
+      { "id": 0, "answer": "receipt", "isAnswer": false },
+      { "id": 1, "answer": "prescription", "isAnswer": true },
+      { "id": 2, "answer": "note", "isAnswer": false },
+      { "id": 3, "answer": "description", "isAnswer": false }
+    ]
+  }
+]
+   },
+   {
+     "id": 3,
+    "title": "English Pronunciation",
+     "img_url":
+       "https://fluencycorp.com/wp-content/uploads/2019/01/hardest-part-learning-english.jpg",
+     "summary":
+       "three - The connection between letters and sounds in English always seems mysterious to beginner English learners. It may seem like the rules of pronunciation are messy, but there are ways to determine what a word sounds like. In this lesson, you’ll learn about a technique called backchaining that’s used by professional actors and language teachers. With backchaining, you pronounce the last sound of a word first and then keep moving forward.",
+     "content": "this is the full lesson content 3",
+     "url": "https://www.youtube.com/watch?v=sMWLytZAzGg",
+     "rating": 230,
+    "questions": [
+  {
+    "text": "What flag is this?",
+    "image": "/images/flag.jpeg",
+    "choices": [
+      { "id": 0, "answer": "Italy", "isAnswer": false },
+      { "id": 1, "answer": "Sweden", "isAnswer": false },
+      { "id": 2, "answer": "China", "isAnswer": false },
+      { "id": 3, "answer": "United Kingdom", "isAnswer": true }
+    ]
+  },
+  {
+    "text": "Her thinking leans ____ democracy?",
+    "choices": [
+      { "id": 0, "answer": "with", "isAnswer": false },
+      { "id": 1, "answer": "for", "isAnswer": false },
+      { "id": 2, "answer": "in", "isAnswer": false },
+      { "id": 3, "answer": "towards", "isAnswer": true }
+    ]
+  },
+  {
+    "text": "I ____ never seen such a picture before?",
+    "choices": [
+      { "id": 0, "answer": "has", "isAnswer": false },
+      { "id": 1, "answer": "have", "isAnswer": true },
+      { "id": 2, "answer": "was", "isAnswer": false },
+      { "id": 3, "answer": "were", "isAnswer": false }
+    ]
+  },
+  {
+    "text": "What does this flag?",
+    "image": "/images/city.jpeg",
+    "choices": [
+      { "id": 0, "answer": "Manchester", "isAnswer": false },
+      { "id": 1, "answer": "Leeds", "isAnswer": false },
+      { "id": 2, "answer": "London", "isAnswer": true },
+      { "id": 3, "answer": "Norwich", "isAnswer": false }
+    ]
+  },
+  {
+    "text": "The doctor gave me a ______ for some medicine yesterday?",
+    "choices": [
+      { "id": 0, "answer": "receipt", "isAnswer": false },
+      { "id": 1, "answer": "prescription", "isAnswer": true },
+      { "id": 2, "answer": "note", "isAnswer": false },
+      { "id": 3, "answer": "description", "isAnswer": false }
+    ]
+  }
+]
+   }
+ ]
+
