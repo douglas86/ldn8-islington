@@ -7,12 +7,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [name, setName] = useState("");
+  const [difficulty, setDifficulty] = useState("");
+
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home name={name} setName={setName} />} />
-        <Route path="/quiz" element={<Quiz name={name} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              name={name}
+              setName={setName}
+              setDifficulty={setDifficulty}
+              difficulty={difficulty}
+            />
+          }
+        />
+        <Route
+          path="/quiz"
+          element={<Quiz name={name} difficulty={difficulty} />}
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
 import { TextField, MenuItem, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const Home = ({ name, setName }) => {
-  const [difficulty, setDifficulty] = useState("");
+const Home = ({ name, setName, setDifficulty, difficulty }) => {
 
   return (
     <div className="content">
@@ -28,13 +27,13 @@ const Home = ({ name, setName }) => {
             onChange={(event) => setDifficulty(event.target.value)}
             style={{ marginBottom: 30 }}
           >
-            <MenuItem value="Easy">Easy</MenuItem>
-            <MenuItem value="Medium">Medium</MenuItem>
-            <MenuItem value="Hard">Hard</MenuItem>
+            <MenuItem value="1">Easy</MenuItem>
+            <MenuItem value="2">Medium</MenuItem>
+            <MenuItem value="3">Hard</MenuItem>
           </TextField>
 
           <Button variant="contained" size="large">
-            <Link to="/quiz" className="start-quiz-link">
+            <Link to={"/quiz"} className="start-quiz-link">
               Start Quiz
             </Link>
           </Button>
