@@ -13,3 +13,12 @@
   width: 100%;
   justify-content: space-evenly;
 }
+
+Button {
+  width: 140px;
+}
+
+.start-quiz-link {
+  text-decoration: inherit;
+  color: white;
+}

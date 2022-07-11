@@ -4,7 +4,7 @@ import "./Quiz.css";
 import NextQuestionButton from "./NextQuestionButton";
 import axios from "axios";
 
-const Quiz = ({name}) => {
+const Quiz = ({ name }) => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showTotalScore, setShowTotalScore] = useState(false);
@@ -14,7 +14,6 @@ const Quiz = ({name}) => {
 
   // Handling netlify error where _correct_ variable never used
   console.log(correct);
- 
 
   const loadData = () => {
     axios.get("https://ldn8-islington.herokuapp.com/questions").then((res) => {
@@ -38,6 +37,7 @@ const Quiz = ({name}) => {
   function restartQuiz() {
     setCurrentQuestion(0);
     setShowTotalScore(false);
+    
   }
 
   function choiceClicked(choice) {
@@ -54,20 +54,20 @@ const Quiz = ({name}) => {
       <h3>Hello {name} </h3>
       <h2 className="question-number">
         Question: {currentQuestion + 1}/{questions.length}
-        <span className="score" style={{ color: "tomato" }}>
+        <span className="score" style={{ color: "#3A5BA0" }}>
           Score: {calculatedScore()}
         </span>
       </h2>
 
       {showTotalScore ? (
         <div className="total-score">
-          <h1 style={{ color: "tomato", textAlign: "center" }}>
+          <h1 style={{ color: "#635666", textAlign: "center" }}>
             Quiz Ended! You Scored {calculatedScore()} Out Of {questions.length}
           </h1>
-
           <button onClick={() => restartQuiz()} className="restart-button">
             Restart the game
           </button>
+         
         </div>
       ) : (
         <div className="question-card">
