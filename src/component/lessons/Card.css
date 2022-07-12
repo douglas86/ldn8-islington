@@ -6,7 +6,7 @@
 .circle-img {
   object-fit: cover;
   height: 200px;
-  width: 400px;
+  width: 450px;
 }
 
 .img-container {
@@ -15,7 +15,7 @@
 
 .text-container {
   background-color: rgb(252, 252, 252);
-  width: 400px;
+  width: 450px;
 }
 
 .card-container {
@@ -23,9 +23,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 50px;
-  margin: auto;
+  margin: 50px;
 }
 
 .lesson-summary {
-  padding: 20px;
+  padding: 0 20px 20px;
+}
+.inner-text-container {
+  padding: 0 20px 20px;
 }
