@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
+import LessonsData from "./LessonsData.json";
 import Header from "./component/header/Header";
 import Home from "./component/home/Home";
 import Quiz from "./component/quiz/Quiz";
 import Lessons from "./component/lessons/Lessons";
-import LessonsData from "./LessonsData";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [lessons, setLessons] = useState(LessonsData);
   const [name, setName] = useState("");
   const [difficulty, setDifficulty] = useState("");
 
@@ -31,7 +31,10 @@ function App() {
           path="/quiz"
           element={<Quiz name={name} difficulty={difficulty} />}
         />
-        <Route path="/lessons" element={<Lessons lessons={lessons} />} />
+        <Route
+          path="/lessons"
+          element={<Lessons LessonsData={LessonsData} />}
+        />
       </Routes>
     </BrowserRouter>
   );

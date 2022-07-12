@@ -1,10 +1,10 @@
 import React from "react";
 import Card from "./Card";
 
-const Cards = ({ lessons }) => {
+const Cards = ({ LessonsData }) => {
   return (
     <div className="card-container">
-      <Card lessons={lessons} />
+      <Card LessonsData={LessonsData} />
     </div>
   );
 };
