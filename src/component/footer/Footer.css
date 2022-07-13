@@ -2,20 +2,22 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(247, 240, 212);
-
   position: fixed;
-  bottom: 0;
-  width: 100%;
+   bottom: 0;
+   width: 100%;
 }
 .footer-list {
   display: flex;
+  font-size: 13px;
   flex-direction: row;
   gap: 18%;
-  margin-left:5%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  height: 1em;
 }
 .copy-right {
-  text-align: center;
-  margin-top: 5px;
+  font-size: 13px;
+
   color: rgb(68, 1, 1);
 }
 

@@ -7,6 +7,9 @@ const Home = ({ name, setName, setDifficulty, difficulty }) => {
 
   return (
     <div className="content">
+      <div>
+        <Link to="/teacher">Go to the teacher page</Link>
+      </div>
       <div className="settings">
         <h3>Quiz Setting</h3>
 
