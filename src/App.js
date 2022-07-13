@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./component/header/Header";
 import Home from "./component/home/Home";
 import Quiz from "./component/quiz/Quiz";
+import Footer from "./component/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           element={<Quiz name={name} difficulty={difficulty} />}
         />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

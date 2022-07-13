@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(247, 240, 212);
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footer-list {
+  display: flex;
+  flex-direction: row;
+  gap: 18%;
+  margin-left:5%;
+}
+.copy-right {
+  text-align: center;
+  margin-top: 5px;
+  color: rgb(68, 1, 1);
+}
+
+.facebook,
+.twitter,
+.phone,
+.map-marked-alt {
+  color: rgb(74, 152, 242);
+  font-size: 18px;
+}
