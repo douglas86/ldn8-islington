@@ -6,9 +6,12 @@ import Home from "./component/home/Home";
 import Quiz from "./component/quiz/Quiz";
 import Lessons from "./component/lessons/Lessons";
 import LessonDetail from "./component/lessons/LessonDetail";
+
 import Teacher from "./component/teacher/Teacher";
 import Footer from "./component/footer/Footer";
 import EditLesson from "./component/teacher/EditLesson";
+
+
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -32,7 +35,7 @@ function App() {
           }
         />
         <Route
-          path="/quiz"
+          path="/lessons/:id/quiz"
           element={<Quiz name={name} difficulty={difficulty} />}
         />
         <Route
