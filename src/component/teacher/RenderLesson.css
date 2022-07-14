@@ -9,7 +9,8 @@
 }
 .lesson-card {
   background-color: #f9f0f8;
-
+  padding: 8px;
+  text-align: center;
 }
 
 .btn-1,
@@ -22,6 +23,6 @@
   color: white;
   font-family: "Noto Sans KR", sans-serif;
   text-transform: uppercase;
-  border-radius: 5px;cursor: pointer;
-
+  border-radius: 5px;
+  cursor: pointer;
 }

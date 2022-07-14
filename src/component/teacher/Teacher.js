@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import Card from "../lessons/Card";
 import RenderLesson from "./RenderLesson";
 import Form from "./Form";
 import axios from "axios";
@@ -16,16 +15,9 @@ function Teacher() {
     });
   }, []);
 
-  const deleteLessons = (arrLesson) => {
-    //To delete from front end
-    //  setAllVideos((videos) => {
-    //    return videos.filter((v) => {
-    //      return v.id !== arrVideo.id;
-    //    });
-    //  });
 
-    // To delete from the server
-    axios
+  const deleteLessons = (arrLesson) => {
+ axios
       .delete(`https://ldn8-islington.herokuapp.com/lessons/${arrLesson.id}`)
       .then((res) => {
         if (res.status === 200) {
@@ -53,7 +45,7 @@ function Teacher() {
       </p>
       <div>
         <div className="add-content">
-          <p onClick={() => setVisible(true)}>Add Content</p>
+          <p onClick={() => setVisible(true)}>Add Lesson</p>
           <p type="submit" onClick={() => setVisible(false)}>
             Cancel
           </p>

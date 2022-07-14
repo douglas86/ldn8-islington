@@ -77,7 +77,7 @@ function Form() {
           onChange={(event) => handleInputChange(event, "video_url")}
         />
 
-        <input onClick={() => addContent} className="submit" type="submit" value="Add Content" />
+        <input onClick={() => addContent} className="submit" type="submit" value="Add Lesson" />
       </form>
     </div>
   );

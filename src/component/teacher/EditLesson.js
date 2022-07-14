@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Form.css";
+import { Link } from "react-router-dom";
 
-function EditLesson(props) {
+function EditLesson({ props }) {
   const [inputs, setInputs] = useState({
     title: "",
     img_url: "",
@@ -11,25 +12,33 @@ function EditLesson(props) {
     content: "",
     video_url: "",
   });
-  console.log(inputs);
+
+  const queryString = window.location.search;
+
+  const urlParams = new URLSearchParams(queryString);
+
+  const lesson_id = Number(urlParams.get("id"));
 
   const handleInputChange = (event, names) => {
     setInputs({ ...inputs, [names]: event.target.value });
+    console.log(inputs);
   };
 
-  const editContent = (event) => {
-    // event.preventDefault();
-    const lesson_id = props.match.params.id;
-    axios.get(`https://ldn8-islington.herokuapp.com/lessons${lesson_id}`)
-    .then(
+  useEffect(() => {
+    axios.get(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`).then(
       (res) => {
-        if (res.data.status === 200) {
-          setInputs(res.data.lesson);
-        }
-      }, [props.match.params.id]);
+        setInputs(res.data[0]);
+      },
+      [lesson_id]
+    );
+  }, []);
+  const editContent = (event) => {
+    axios
+      .put(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`, inputs)
+      .then(() => <Link to={"/teacher"} />);
   };
 
-  return ( 
+  return (
     <div>
       <form onSubmit={editContent}>
         <input

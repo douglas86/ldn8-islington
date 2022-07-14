@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 
 const Card = ({ LessonsData}) => {
+    
   return LessonsData.map((lesson, index) => (
     <div key={index} className="card">
-      
+   
       <div className="img-container">
         <img className="circle-img" src={lesson.img_url} alt="avatar_img" />
       </div>
