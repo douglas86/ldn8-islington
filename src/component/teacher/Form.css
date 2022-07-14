@@ -6,9 +6,9 @@ Form {
   border-radius: 10px;
 }
 Form {
-  background-color: #9dd6df;
+  background-color:linear-gradient(rgb(59, 17, 17), rgb(248, 248, 241));
   border: 1px solid rgb(223, 213, 213);
-  padding: 5px;
+
   display: flex;
   flex-direction: column;
 }
@@ -25,9 +25,10 @@ input {
 .submit {
   font-weight: bold;
   margin-left: 10%;
-  background-color: #18978f;
+  background-color:#1a8731;
   cursor: pointer;
   font-size: 20px;
+  color:white
 }
 .add-content {
   font-size: 20px;
@@ -41,7 +42,8 @@ input {
   gap: 8em;
   padding: 10px;
   justify-content: center;
-  background-color: #9dd6df;
+  background-color: #5d3636;
+  color:white;
  
 }
 .contact-us,h1 {

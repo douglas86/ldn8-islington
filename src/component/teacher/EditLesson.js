@@ -1,8 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
-import "./Form.css"
+import "./Form.css";
 
-function Form() {
+function EditLesson(props) {
   const [inputs, setInputs] = useState({
     title: "",
     img_url: "",
@@ -17,28 +17,21 @@ function Form() {
     setInputs({ ...inputs, [names]: event.target.value });
   };
 
-  const addContent = (event) => {
+  const editContent = (event) => {
     // event.preventDefault();
-
-    axios
-      .post("https://ldn8-islington.herokuapp.com/lessons", inputs)
-      .then((res) => {
-        if (res.status === 201) {
-          axios
-            .get("https://ldn8-islington.herokuapp.com/lessons")
-            .then((res) => {
-              setInputs(res.data);
-             
-            });
-               
+    const lesson_id = props.match.params.id;
+    axios.get(`https://ldn8-islington.herokuapp.com/lessons${lesson_id}`)
+    .then(
+      (res) => {
+        if (res.data.status === 200) {
+          setInputs(res.data.lesson);
         }
-   
-      });
+      }, [props.match.params.id]);
   };
 
-  return (
+  return ( 
     <div>
-      <form onSubmit={addContent}>
+      <form onSubmit={editContent}>
         <input
           placeholder="Title"
           type="text"
@@ -77,10 +70,10 @@ function Form() {
           onChange={(event) => handleInputChange(event, "video_url")}
         />
 
-        <input onClick={() => addContent} className="submit" type="submit" value="Add Content" />
+        <input className="submit" type="submit" value="Edit Lesson" />
       </form>
     </div>
   );
 }
 
-export default Form;
+export default EditLesson;

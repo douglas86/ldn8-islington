@@ -4,22 +4,18 @@ import RenderLesson from "./RenderLesson";
 import Form from "./Form";
 import axios from "axios";
 
+
 function Teacher() {
   const [visible, setVisible] = useState(false);
   const [lessons, setLessons] = useState([]);
-  //   const [editedLesson, setEditedLesson] = useState([]);
-
-  //   const setEditHandler = (lessonId) => {
-  //     axios.get("https://ldn8-islington.herokuapp.com/lessons/").then((res) => {
-  //       setLessons(res.data);
-  //     });
-  //   };
+ 
 
   useEffect(() => {
     axios.get("https://ldn8-islington.herokuapp.com/lessons/").then((res) => {
       setLessons(res.data);
     });
   }, []);
+
   const deleteLessons = (arrLesson) => {
     //To delete from front end
     //  setAllVideos((videos) => {

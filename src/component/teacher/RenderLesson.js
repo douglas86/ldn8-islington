@@ -1,5 +1,6 @@
 import React from "react";
 import "./RenderLesson.css";
+import{Link} from "react-router-dom"
 const RenderLesson = ({ lesson, isTeacher, deleteLessons }) => {
   return (
     <section className="lesson-card">
@@ -15,7 +16,7 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons }) => {
       <p>{lesson.summary}</p>
       <p>{lesson.content}</p>
       <iframe
-        src={lesson.video_url}
+        src={`https://www.youtube.com/embed/${lesson.video_url.split("v=")[1]}`}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -23,9 +24,16 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons }) => {
       ></iframe>
       <div>
         {isTeacher && (
-          <button className="btn-1" onClick={() => deleteLessons(lesson)}> Delete </button>
+          <button className="btn-1" onClick={() => deleteLessons(lesson)}>
+            {" "}
+            Delete{" "}
+          </button>
         )}
-        {isTeacher && <button className="btn-2" >Edit</button>}
+        {isTeacher && (
+          <button style={{ backgroundColor: "#1a8731" }} className="btn-2">
+            <Link to={`/edit-lesson/${lesson.id}`}>Edit</Link>
+          </button>
+        )}
       </div>
     </section>
   );
