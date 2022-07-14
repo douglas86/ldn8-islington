@@ -1,3 +1,26 @@
+#Setup
+Pick one member of the team to own the repository and pipeline. That person should do the following:
+
+Click the "Use this template" button above (see GitHub's docs) to create your team repository and name it something appropriate for your project.
+In your repo, click the "Deploy to Heroku" button at the top of the README and create a Heroku account when prompted.
+Fill in the name of the application, select Europe and then click "Deploy App".
+Once it has deployed successfully, click the "Manage app" button to view the application details.
+Go to the "Deploy" tab, select "Connect to GitHub" and choose your repo.
+Click "Enable automatic deploys".
+Whenever you commit to main (or e.g. merge a pull request) it will get automatically deployed!
+
+You should now make sure all of the project team are collaborators on the repository.
+
+#Scripts
+Various scripts are provided in the package file, but many are helpers for other scripts; here are the ones you'll commonly use:
+
+dev: starts the frontend and backend in dev mode, with file watching (note that the backend runs on port 3100, and the frontend is proxied to it).
+lint: runs ESLint and Prettier against all the code in the project.
+serve: builds and starts the app in production mode locally.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
