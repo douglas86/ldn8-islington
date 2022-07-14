@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const LessonDetail = ({ LessonsData }) => {
   const { title } = useParams();
@@ -19,10 +19,7 @@ const LessonDetail = ({ LessonsData }) => {
             <p>{lesson?.summary}</p>
             <div>
               <h3>quiz goes here</h3>
-              {/* <Link to={`/lessons/${lesson.id}/quiz`}>Take Quiz</Link> */}
-              {/* <Routes>
-                <Route path="quiz" element={<Quiz />} />
-              </Routes> */}
+              <Link to={`/lessons/${lesson.id}/quiz`}>Take Quiz</Link>
             </div>
           </div>
         )
