@@ -11,50 +11,50 @@
      "rating": 23,
      "questions": [
   {
-    "text": "one - What flag is this?",
+    "question": "one - What flag is this?",
     "image": "/images/flag.jpeg",
-    "choices": [
-      { "id": 0, "answer": "Italy", "isAnswer": false },
-      { "id": 1, "answer": "Sweden", "isAnswer": false },
-      { "id": 2, "answer": "China", "isAnswer": false },
-      { "id": 3, "answer": "United Kingdom", "isAnswer": true }
+    "answers": [
+      { "id": 0, "answer": "Italy", "is_correct": false },
+      { "id": 1, "answer": "Sweden", "is_correct": false },
+      { "id": 2, "answer": "China", "is_correct": false },
+      { "id": 3, "answer": "United Kingdom", "is_correct": true }
     ]
   },
   {
-    "text": "Her thinking leans ____ democracy?",
-    "choices": [
-      { "id": 0, "answer": "with", "isAnswer": false },
-      { "id": 1, "answer": "for", "isAnswer": false },
-      { "id": 2, "answer": "in", "isAnswer": false },
-      { "id": 3, "answer": "towards", "isAnswer": true }
+    "question": "Her thinking leans ____ democracy?",
+    "answers": [
+      { "id": 0, "answer": "with", "is_correct": false },
+      { "id": 1, "answer": "for", "is_correct": false },
+      { "id": 2, "answer": "in", "is_correct": false },
+      { "id": 3, "answer": "towards", "is_correct": true }
     ]
   },
   {
-    "text": "I ____ never seen such a picture before?",
-    "choices": [
-      { "id": 0, "answer": "has", "isAnswer": false },
-      { "id": 1, "answer": "have", "isAnswer": true },
-      { "id": 2, "answer": "was", "isAnswer": false },
-      { "id": 3, "answer": "were", "isAnswer": false }
+    "question": "I ____ never seen such a picture before?",
+    "answers": [
+      { "id": 0, "answer": "has", "is_correct": false },
+      { "id": 1, "answer": "have", "is_correct": true },
+      { "id": 2, "answer": "was", "is_correct": false },
+      { "id": 3, "answer": "were", "is_correct": false }
     ]
   },
   {
-    "text": "What does this flag?",
+    "question": "What does this flag?",
     "image": "/images/city.jpeg",
-    "choices": [
-      { "id": 0, "answer": "Manchester", "isAnswer": false },
-      { "id": 1, "answer": "Leeds", "isAnswer": false },
-      { "id": 2, "answer": "London", "isAnswer": true },
-      { "id": 3, "answer": "Norwich", "isAnswer": false }
+    "answers": [
+      { "id": 0, "answer": "Manchester", "is_correct": false },
+      { "id": 1, "answer": "Leeds", "is_correct": false },
+      { "id": 2, "answer": "London", "is_correct": true },
+      { "id": 3, "answer": "Norwich", "is_correct": false }
     ]
   },
   {
-    "text": "The doctor gave me a ______ for some medicine yesterday?",
-    "choices": [
-      { "id": 0, "answer": "receipt", "isAnswer": false },
-      { "id": 1, "answer": "prescription", "isAnswer": true },
-      { "id": 2, "answer": "note", "isAnswer": false },
-      { "id": 3, "answer": "description", "isAnswer": false }
+    "question": "The doctor gave me a ______ for some medicine yesterday?",
+    "answers": [
+      { "id": 0, "answer": "receipt", "is_correct": false },
+      { "id": 1, "answer": "prescription", "is_correct": true },
+      { "id": 2, "answer": "note", "is_correct": false },
+      { "id": 3, "answer": "description", "is_correct": false }
     ]
   }
 ]
@@ -71,50 +71,50 @@
      "rating": 230,
      "questions": [
   {
-    "text": "two - What flag is this?",
+    "question": "two - What flag is this?",
     "image": "/images/flag.jpeg",
-    "choices": [
-      { "id": 0, "answer": "Italy", "isAnswer": false },
-      { "id": 1, "answer": "Sweden", "isAnswer": false },
-      { "id": 2, "answer": "China", "isAnswer": false },
-      { "id": 3, "answer": "United Kingdom", "isAnswer": true }
+    "answers": [
+      { "id": 0, "answer": "Italy", "is_correct": false },
+      { "id": 1, "answer": "Sweden", "is_correct": false },
+      { "id": 2, "answer": "China", "is_correct": false },
+      { "id": 3, "answer": "United Kingdom", "is_correct": true }
     ]
   },
   {
-    "text": "Her thinking leans ____ democracy?",
-    "choices": [
-      { "id": 0, "answer": "with", "isAnswer": false },
-      { "id": 1, "answer": "for", "isAnswer": false },
-      { "id": 2, "answer": "in", "isAnswer": false },
-      { "id": 3, "answer": "towards", "isAnswer": true }
+    "question": "Her thinking leans ____ democracy?",
+    "answers": [
+      { "id": 0, "answer": "with", "is_correct": false },
+      { "id": 1, "answer": "for", "is_correct": false },
+      { "id": 2, "answer": "in", "is_correct": false },
+      { "id": 3, "answer": "towards", "is_correct": true }
     ]
   },
   {
-    "text": "I ____ never seen such a picture before?",
-    "choices": [
-      { "id": 0, "answer": "has", "isAnswer": false },
-      { "id": 1, "answer": "have", "isAnswer": true },
-      { "id": 2, "answer": "was", "isAnswer": false },
-      { "id": 3, "answer": "were", "isAnswer": false }
+    "question": "I ____ never seen such a picture before?",
+    "answers": [
+      { "id": 0, "answer": "has", "is_correct": false },
+      { "id": 1, "answer": "have", "is_correct": true },
+      { "id": 2, "answer": "was", "is_correct": false },
+      { "id": 3, "answer": "were", "is_correct": false }
     ]
   },
   {
-    "text": "What does this flag?",
+    "question": "What does this flag?",
     "image": "/images/city.jpeg",
-    "choices": [
-      { "id": 0, "answer": "Manchester", "isAnswer": false },
-      { "id": 1, "answer": "Leeds", "isAnswer": false },
-      { "id": 2, "answer": "London", "isAnswer": true },
-      { "id": 3, "answer": "Norwich", "isAnswer": false }
+    "answers": [
+      { "id": 0, "answer": "Manchester", "is_correct": false },
+      { "id": 1, "answer": "Leeds", "is_correct": false },
+      { "id": 2, "answer": "London", "is_correct": true },
+      { "id": 3, "answer": "Norwich", "is_correct": false }
     ]
   },
   {
-    "text": "The doctor gave me a ______ for some medicine yesterday?",
-    "choices": [
-      { "id": 0, "answer": "receipt", "isAnswer": false },
-      { "id": 1, "answer": "prescription", "isAnswer": true },
-      { "id": 2, "answer": "note", "isAnswer": false },
-      { "id": 3, "answer": "description", "isAnswer": false }
+    "question": "The doctor gave me a ______ for some medicine yesterday?",
+    "answers": [
+      { "id": 0, "answer": "receipt", "is_correct": false },
+      { "id": 1, "answer": "prescription", "is_correct": true },
+      { "id": 2, "answer": "note", "is_correct": false },
+      { "id": 3, "answer": "description", "is_correct": false }
     ]
   }
 ]
@@ -131,50 +131,50 @@
      "rating": 230,
     "questions": [
   {
-    "text": "What flag is this?",
+    "question": "three - What flag is this?",
     "image": "/images/flag.jpeg",
-    "choices": [
-      { "id": 0, "answer": "Italy", "isAnswer": false },
-      { "id": 1, "answer": "Sweden", "isAnswer": false },
-      { "id": 2, "answer": "China", "isAnswer": false },
-      { "id": 3, "answer": "United Kingdom", "isAnswer": true }
+    "answers": [
+      { "id": 0, "answer": "Italy", "is_correct": false },
+      { "id": 1, "answer": "Sweden", "is_correct": false },
+      { "id": 2, "answer": "China", "is_correct": false },
+      { "id": 3, "answer": "United Kingdom", "is_correct": true }
     ]
   },
   {
-    "text": "Her thinking leans ____ democracy?",
-    "choices": [
-      { "id": 0, "answer": "with", "isAnswer": false },
-      { "id": 1, "answer": "for", "isAnswer": false },
-      { "id": 2, "answer": "in", "isAnswer": false },
-      { "id": 3, "answer": "towards", "isAnswer": true }
+    "question": "three - Her thinking leans ____ democracy?",
+    "answers": [
+      { "id": 0, "answer": "with", "is_correct": false },
+      { "id": 1, "answer": "for", "is_correct": false },
+      { "id": 2, "answer": "in", "is_correct": false },
+      { "id": 3, "answer": "towards", "is_correct": true }
     ]
   },
   {
-    "text": "I ____ never seen such a picture before?",
-    "choices": [
-      { "id": 0, "answer": "has", "isAnswer": false },
-      { "id": 1, "answer": "have", "isAnswer": true },
-      { "id": 2, "answer": "was", "isAnswer": false },
-      { "id": 3, "answer": "were", "isAnswer": false }
+    "question": "I ____ never seen such a picture before?",
+    "answers": [
+      { "id": 0, "answer": "has", "is_correct": false },
+      { "id": 1, "answer": "have", "is_correct": true },
+      { "id": 2, "answer": "was", "is_correct": false },
+      { "id": 3, "answer": "were", "is_correct": false }
     ]
   },
   {
-    "text": "What does this flag?",
+    "question": "What does this flag?",
     "image": "/images/city.jpeg",
-    "choices": [
-      { "id": 0, "answer": "Manchester", "isAnswer": false },
-      { "id": 1, "answer": "Leeds", "isAnswer": false },
-      { "id": 2, "answer": "London", "isAnswer": true },
-      { "id": 3, "answer": "Norwich", "isAnswer": false }
+    "answers": [
+      { "id": 0, "answer": "Manchester", "is_correct": false },
+      { "id": 1, "answer": "Leeds", "is_correct": false },
+      { "id": 2, "answer": "London", "is_correct": true },
+      { "id": 3, "answer": "Norwich", "is_correct": false }
     ]
   },
   {
-    "text": "The doctor gave me a ______ for some medicine yesterday?",
-    "choices": [
-      { "id": 0, "answer": "receipt", "isAnswer": false },
-      { "id": 1, "answer": "prescription", "isAnswer": true },
-      { "id": 2, "answer": "note", "isAnswer": false },
-      { "id": 3, "answer": "description", "isAnswer": false }
+    "question": "The doctor gave me a ______ for some medicine yesterday?",
+    "answers": [
+      { "id": 0, "answer": "receipt", "is_correct": false },
+      { "id": 1, "answer": "prescription", "is_correct": true },
+      { "id": 2, "answer": "note", "is_correct": false },
+      { "id": 3, "answer": "description", "is_correct": false }
     ]
   }
 ]

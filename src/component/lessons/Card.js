@@ -10,16 +10,16 @@ const Card = ({ LessonsData}) => {
     <div key={index} className="card">
    
       <div className="img-container">
-        <img className="circle-img" src={lesson.img_url} alt="avatar_img" />
+        <img className="circle-img" src={lesson?.img_url} alt="avatar_img" />
       </div>
       <div className="text-container">
-        <h2 className="name">{lesson.title}</h2>
+        <h2 className="name">{lesson?.title}</h2>
         {/* <p className="info">{lesson.intro}</p> */}
         <div className="inner-text-container">
-          <div className="lesson-summary">{lesson.summary}</div>
+          <div className="lesson-summary">{lesson?.summary}</div>
           <Button variant="contained" style={{ margin: "0 20px" }}>
             <Link
-              to={`/lessons/${lesson.title}`}
+              to={`/lessons/${lesson.id}`}
               style={{ color: "inherit", textDecoration: "inherit" }}
             >
               View Lesson

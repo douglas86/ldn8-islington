@@ -3,13 +3,13 @@ import React from "react";
 function NextQuestionButton({
   currentQuestion,
   setCurrentQuestion,
-  questions,
+  LessonsData,
   setShowTotalScore,
   disabled,
   setCorrect,
 }) {
   const nextQuestion = () => {
-    if (currentQuestion + 1 < questions.length) {
+    if (currentQuestion + 1 < LessonsData[0].questions.length) {
       setCurrentQuestion(currentQuestion + 1);
       
     } else {
@@ -17,10 +17,12 @@ function NextQuestionButton({
       setCorrect();
     }
   };
+
   // const handleSubmit = (event) => {
   //   event.preventDefault();
   //   alert(`Please select an answer`);
   // };
+
 
   return (
     <button
