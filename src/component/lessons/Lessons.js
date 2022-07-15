@@ -5,7 +5,7 @@ import "./Lessons.css";
 const Lessons = ({ LessonsData }) => {
   return (
     <div className="lesson-section">
-      <h1>lesson</h1>
+      <h1 className="lesson-header">lesson</h1>
 
       <div>
         <Cards LessonsData={LessonsData} />
