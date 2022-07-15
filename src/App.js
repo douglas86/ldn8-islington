@@ -28,7 +28,7 @@ function App() {
           }
         />
         <Route
-          path="/lessons/:id/quiz"
+          path="/questions/lessons/:id"
           element={<Quiz name={name} difficulty={difficulty} />}
         />
         <Route
@@ -36,7 +36,7 @@ function App() {
           element={<Lessons LessonsData={LessonsData} />}
         />
         <Route
-          path="/lessons/:title"
+          path="/lessons/:id"
           element={<LessonDetail LessonsData={LessonsData} />}
         />
       </Routes>

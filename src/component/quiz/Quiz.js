@@ -1,33 +1,29 @@
-import React, { useEffect, useState } from "react";
-// import questions from "../data.json";
+import React, { useState } from "react";
+//import { useParams } from "react-router-dom";
 import "./Quiz.css";
 import NextQuestionButton from "./NextQuestionButton";
-import axios from "axios";
+import LessonsData from "../../LessonsData.json";
+//import axios from "axios";
 
-const Quiz = ({name, difficulty}) => {
+const Quiz = () => {
+  // const { id } = useParams();
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showTotalScore, setShowTotalScore] = useState(false);
-  const [correct, setCorrect] = useState();
-  const [questions, setQuestions] = useState([]);
-  const [answers, setAnswers] = useState([]);
+  // const [questions, setQuestions] = useState([]);
 
   // Handling netlify error where _correct_ variable never used
-  console.log(correct);
- 
+  // console.log(correct);
+  // useEffect(() => {
+  //   loadData();
+  // }, [id]); // resolved infinite rerender
 
-  const loadData = () => {
-    axios.get(`https://ldn8-islington.herokuapp.com/questions/difficulty/${difficulty}`).then((res) => {
-      setQuestions(res.data);
-    });
-    axios.get("https://ldn8-islington.herokuapp.com/answers").then((res) => {
-      setAnswers(res.data);
-    });
-  };
-
-  useEffect(() => {
-    loadData();
-  });
+  // const loadData = (id) => {
+  //   axios
+  //     .get(`https://ldn8-islington.herokuapp.com/questions/lessons/${id}`)
+  //     .then((res) => setQuestions(res.data))
+  //     .catch((error) => console.log(error.message));
+  // };
 
   function calculatedScore() {
     let correctAnswers = selectedAnswers.filter((selectedAnswer, index) => {
@@ -35,26 +31,23 @@ const Quiz = ({name, difficulty}) => {
     });
     return correctAnswers.length;
   }
+
   function restartQuiz() {
     setCurrentQuestion(0);
     setShowTotalScore(false);
   }
 
-  function choiceClicked(choice) {
+  function choiceClicked(ans) {
+    console.log("ans", selectedAnswers);
     let newSelectedAnswers = [...selectedAnswers];
-    newSelectedAnswers[currentQuestion] = choice;
+    newSelectedAnswers[currentQuestion] = ans;
     setSelectedAnswers(newSelectedAnswers);
-    if (choice.is_correct) {
-      setCorrect(choice.id);
-    }
   }
 
   return (
     <div style={{ margin: "40px" }}>
-      <h1>Hello {name} </h1>
-      <h3>Difficulty: {questions.length > 0 && questions[0].diff_type}</h3>
       <h2 className="question-number">
-        Question: {currentQuestion + 1}/{questions.length}
+        Question: {currentQuestion + 1}/{LessonsData[0].questions.length}
         <span className="score" style={{ color: "tomato" }}>
           Score: {calculatedScore()}
         </span>
@@ -63,52 +56,35 @@ const Quiz = ({name, difficulty}) => {
       {showTotalScore ? (
         <div className="total-score">
           <h1 style={{ color: "tomato", textAlign: "center" }}>
-            Quiz Ended! You Scored {calculatedScore()} Out Of {questions.length}
+            Quiz Ended! You Scored {calculatedScore()} Out Of{" "}
+            {LessonsData[0].questions.length}
           </h1>
-
           <button onClick={() => restartQuiz()} className="restart-button">
-            Restart the quiz
+            Restart the game
           </button>
         </div>
       ) : (
         <div className="question-card">
-          {questions.length > 0 && (
-            <h3>{questions[currentQuestion].question}</h3>
-          )}
-          {questions.length > 0 && questions[currentQuestion].image ? (
-            <img src={questions[currentQuestion].image} alt={""} />
-          ) : null}
-          {questions.length > 0 && (
-            <ul className="choices">
-              {answers
-                .filter(
-                  (answer) =>
-                    answer.question_id === questions[currentQuestion].id
-                )
-                .map((choice) => {
-                  return (
-                    <li
-                      className="choice"
-                      key={choice.id}
-                      onClick={() => choiceClicked(choice)}
-                      style={{
-                        background:
-                          selectedAnswers[currentQuestion]?.id === choice.id
-                            ? "skyblue"
-                            : "white",
-                      }}
-                    >
-                      {choice.answer}
-                    </li>
-                  );
-                })}
-            </ul>
-          )}
+          <h3>{LessonsData[0].questions[currentQuestion]?.question}</h3>
+          <img src={LessonsData[0].questions[currentQuestion]?.image} alt="" />
+          <ul className="choices">
+            {LessonsData[0].questions[currentQuestion].answers.map((ans) => {
+              return (
+                <li
+                  className="choice"
+                  key={ans.id}
+                  onClick={() => choiceClicked(ans)}
+                >
+                  {ans.answer}
+                </li>
+              );
+            })}
+          </ul>
+
           <NextQuestionButton
             currentQuestion={currentQuestion}
             setCurrentQuestion={setCurrentQuestion}
-            setCorrect={setCorrect}
-            questions={questions}
+            LessonsData={LessonsData}
             setShowTotalScore={setShowTotalScore}
             disabled={selectedAnswers[currentQuestion] === undefined}
           />
