@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Card = ({ post }) => {
   return (
     <div className="card">
-      <Link className="link" to={`/post/${post.id}`}>
+      <Link className="link" to={`/lessons`}>
         <span className="title">{post.title}</span>
-        <img src={post.img} alt="" className="img" />
+        <img src={post.img} alt="" className="image-card" />
         <p className="desc">{post.desc}</p>
         <button className="cardButton">Read More</button>
       </Link>

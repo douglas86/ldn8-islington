@@ -6,14 +6,12 @@ import LessonsData from "../../LessonsData.json";
 //import axios from "axios";
 
 const Quiz = () => {
-  // const { id } = useParams();
+  //const { id } = useParams();
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showTotalScore, setShowTotalScore] = useState(false);
-  // const [questions, setQuestions] = useState([]);
+  //const [questions, setQuestions] = useState([]);
 
-  // Handling netlify error where _correct_ variable never used
-  // console.log(correct);
   // useEffect(() => {
   //   loadData();
   // }, [id]); // resolved infinite rerender
@@ -65,8 +63,8 @@ const Quiz = () => {
         </div>
       ) : (
         <div className="question-card">
-          <h3>{LessonsData[0].questions[currentQuestion]?.question}</h3>
-          <img src={LessonsData[0].questions[currentQuestion]?.image} alt="" />
+          <h3>{LessonsData[0].questions[currentQuestion].question}</h3>
+          <img src={LessonsData[0].questions[currentQuestion].image} alt="" />
           <ul className="choices">
             {LessonsData[0].questions[currentQuestion].answers.map((ans) => {
               return (
