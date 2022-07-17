@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import RenderLesson from "./RenderLesson";
 import Form from "./Form";
+import AddQuestion from "./AddQuestion";
 import axios from "axios";
 
 
@@ -44,9 +45,19 @@ function Teacher() {
         plans are easy to use and aim to give your students the skills and
         confidence they need to enjoy learning English.
       </p>
+      <div className="add-question">
+        <p onClick={() => setVisible(true)}>Add Question</p>
+
+        <p type="submit" onClick={() => setVisible(false)}>
+          Cancel
+        </p>
+      </div>
+      {visible && <AddQuestion />}
+      
       <div>
         <div className="add-content">
           <p onClick={() => setVisible(true)}>Add Lesson</p>
+
           <p type="submit" onClick={() => setVisible(false)}>
             Cancel
           </p>
@@ -60,7 +71,6 @@ function Teacher() {
                 lesson={lesson}
                 isTeacher={true}
                 deleteLessons={deleteLessons}
-               
               />
             </div>
           ))}

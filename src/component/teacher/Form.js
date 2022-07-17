@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+
 import "./Form.css"
 
 function Form() {
@@ -43,7 +44,8 @@ function Form() {
           placeholder="Title"
           type="text"
           value={inputs.title}
-          onChange={(event) => handleInputChange(event, "title")} required
+          onChange={(event) => handleInputChange(event, "title")}
+          required
         />
 
         <input
@@ -77,8 +79,14 @@ function Form() {
           onChange={(event) => handleInputChange(event, "video_url")}
         />
 
-        <input onClick={() => addContent} className="submit" type="submit" value="Add Lesson" />
+        <input
+          onClick={addContent}
+          className="submit"
+          type="submit"
+          value="Add Lesson"
+        />
       </form>
+
     </div>
   );
 }
