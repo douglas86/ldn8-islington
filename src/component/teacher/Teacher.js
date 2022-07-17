@@ -10,7 +10,8 @@ function Teacher() {
  
 
   useEffect(() => {
-    axios.get("https://ldn8-islington.herokuapp.com/lessons/").then((res) => {
+    axios.get("https://ldn8-islington.herokuapp.com/lessons/")
+    .then((res) => {
       setLessons(res.data);
     });
   }, []);
@@ -59,6 +60,7 @@ function Teacher() {
                 lesson={lesson}
                 isTeacher={true}
                 deleteLessons={deleteLessons}
+               
               />
             </div>
           ))}

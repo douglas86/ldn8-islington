@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Form.css";
 import { Link } from "react-router-dom";
 
-function EditLesson({ props }) {
+function EditLesson() {
   const [inputs, setInputs] = useState({
     title: "",
     img_url: "",
@@ -13,6 +13,10 @@ function EditLesson({ props }) {
     video_url: "",
   });
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert("You have submitted the edited form.");
+  };
   const queryString = window.location.search;
 
   const urlParams = new URLSearchParams(queryString);
@@ -40,7 +44,7 @@ function EditLesson({ props }) {
 
   return (
     <div>
-      <form onSubmit={editContent}>
+      <form onSubmit={(editContent, handleSubmit)}>
         <input
           placeholder="Title"
           type="text"

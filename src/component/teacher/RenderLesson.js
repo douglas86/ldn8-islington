@@ -1,7 +1,7 @@
 import React from "react";
 import "./RenderLesson.css";
-import{Link} from "react-router-dom"
-const RenderLesson = ({ lesson, isTeacher, deleteLessons, editLesson}) => {
+import { Link } from "react-router-dom";
+const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
   return (
     <section className="lesson-card">
       <h2>{lesson.title}</h2>
@@ -25,15 +25,13 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons, editLesson}) => {
       <div>
         {isTeacher && (
           <button className="btn-1" onClick={() => deleteLessons(lesson)}>
-            {" "}
-            Delete{" "}
+            Delete
           </button>
         )}
         {isTeacher && (
           <button
             style={{ backgroundColor: "#1a8731" }}
             className="btn-2"
-          
           >
             <Link to={`/edit-lesson/${lesson.id}?id=${lesson.id}`}>Edit</Link>
           </button>

@@ -43,7 +43,7 @@ function Form() {
           placeholder="Title"
           type="text"
           value={inputs.title}
-          onChange={(event) => handleInputChange(event, "title")}
+          onChange={(event) => handleInputChange(event, "title")} required
         />
 
         <input

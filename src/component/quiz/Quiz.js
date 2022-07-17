@@ -5,11 +5,6 @@ import NextQuestionButton from "./NextQuestionButton";
 import LessonsData from "../../LessonsData.json";
 //import axios from "axios";
 
-
-
-const Quiz = ({name, difficulty}) => {
-
-
 const Quiz = () => {
   // const { id } = useParams();
 
@@ -20,12 +15,10 @@ const Quiz = () => {
 
   // Handling netlify error where _correct_ variable never used
 
-
   // console.log(correct);
   // useEffect(() => {
   //   loadData();
   // }, [id]); // resolved infinite rerender
-
 
   // const loadData = (id) => {
   //   axios
@@ -44,7 +37,6 @@ const Quiz = () => {
   function restartQuiz() {
     setCurrentQuestion(0);
     setShowTotalScore(false);
-    
   }
 
   function choiceClicked(ans) {
@@ -57,32 +49,21 @@ const Quiz = () => {
   return (
     <div style={{ margin: "40px" }}>
       <h2 className="question-number">
-
-        Question: {currentQuestion + 1}/{questions.length}
-        <span className="score" style={{ color: "#3A5BA0" }}>
-
         Question: {currentQuestion + 1}/{LessonsData[0].questions.length}
         <span className="score" style={{ color: "tomato" }}>
-
           Score: {calculatedScore()}
         </span>
       </h2>
 
       {showTotalScore ? (
         <div className="total-score">
-
-          <h1 style={{ color: "#635666", textAlign: "center" }}>
-            Quiz Ended! You Scored {calculatedScore()} Out Of {questions.length}
-
           <h1 style={{ color: "tomato", textAlign: "center" }}>
             Quiz Ended! You Scored {calculatedScore()} Out Of{" "}
             {LessonsData[0].questions.length}
-
           </h1>
           <button onClick={() => restartQuiz()} className="restart-button">
             Restart the game
           </button>
-         
         </div>
       ) : (
         <div className="question-card">
