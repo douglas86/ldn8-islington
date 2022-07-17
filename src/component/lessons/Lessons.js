@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const Lessons = ({ LessonsData }) => {
   return (
     <div className="lesson-section">
+
       <Link
         to={`/teacher`}
         style={{ color: "inherit", textDecoration: "inherit" }}
@@ -14,6 +15,9 @@ const Lessons = ({ LessonsData }) => {
         Teacher
       </Link>
       <h1>lesson</h1>
+
+      <h1 className="lesson-header">lesson</h1>
+
 
       <div>
         <Cards LessonsData={LessonsData} />
