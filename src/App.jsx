@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./component/header/Navbar";
 import Home from "./component/home/Home";
-import LessonsData from "./LessonsData.json";
 import Quiz from "./component/quiz/Quiz";
 import Lessons from "./component/lessons/Lessons";
 import LessonDetail from "./component/lessons/LessonDetail";
@@ -14,7 +13,7 @@ import EditLesson from "./component/teacher/EditLesson";
 import Post from "./component/home/Post";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./app.css";
+import "./App.css";
 
 const App = () => {
   return (
@@ -56,11 +55,11 @@ const App = () => {
        
           <Route
             path="/lessons"
-            element={<Lessons LessonsData={LessonsData} />}
+            element={<Lessons />}
           />
           <Route
             path="/lessons/:id"
-            element={<LessonDetail LessonsData={LessonsData} />}
+            element={<LessonDetail />}
           />
           <Route path="/questions/lessons/:id" element={<Quiz />} />
 
