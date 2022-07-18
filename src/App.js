@@ -6,7 +6,7 @@ import Lessons from "./component/lessons/Lessons";
 import LessonDetail from "./component/lessons/LessonDetail";
 import Post from "./component/home/Post";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./app.css";
+import "./App.css";
 
 const App = () => {
   return (
