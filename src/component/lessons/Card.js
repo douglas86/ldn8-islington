@@ -14,7 +14,7 @@ const [lessons, setLessons] = useState([]);
           })
           .catch((error) => console.log(error.message));
       }, []);
-      console.log("lessons", lessons);
+      
   return lessons.map((lesson, index) => (
     <div key={index} className="card">
       <span className="title">{lesson?.title}</span>

@@ -15,7 +15,6 @@ const Quiz = () => {
     axios
       .get(`https://ldn8-islington.herokuapp.com/questions/lessons/${id}`)
       .then((res) => {
-        console.log(res);
         setQuestions(res.data);
       })
       .catch((error) => console.log(error.message));
