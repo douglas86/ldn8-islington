@@ -5,8 +5,9 @@ import Quiz from "./component/quiz/Quiz";
 import Lessons from "./component/lessons/Lessons";
 import LessonDetail from "./component/lessons/LessonDetail";
 import Teacher from "./component/teacher/Teacher";
-import Footer from "./component/footer/Footer";
+// import Footer from "./component/footer/Footer";
 import EditLesson from "./component/teacher/EditLesson";
+
 
 
 
@@ -19,19 +20,13 @@ const App = () => {
   return (
     <BrowserRouter>
 
-      {/* <Header /> */}
+     <Navbar /> 
       <Routes>
-        {/* <Route
+        <Route
           path="/"
           element={
-            <Home
-              name={name}
-              setName={setName}
-              setDifficulty={setDifficulty}
-              difficulty={difficulty}
-            />
-          }
-        /> */}
+            <Home/> }
+          />
         <Route
           path="/questions/lessons/:id"
           element={<Quiz />}
