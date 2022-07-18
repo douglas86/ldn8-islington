@@ -1,13 +1,22 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./LessonDetail.css";
 
 const LessonDetail = ({ LessonsData }) => {
   const { id } = useParams();
+  const [lessons, setLessons] = useState([]);
 
-  return LessonsData.filter((lesson) => lesson.id === parseInt(id)).map(
-    (lesson, index) => (
+  useEffect(() => {
+    axios
+      .get(`https://ldn8-islington.herokuapp.com/lessons/${id}`)
+      .then((res) => setLessons(res.data));
+  }, [id]);
+
+  return lessons
+    .filter((lesson) => lesson.id === parseInt(id))
+    .map((lesson, index) => (
       <div key={index} className="lessonContent">
         <h1>{lesson?.title}</h1>
         <div className="image-container">
@@ -22,8 +31,7 @@ const LessonDetail = ({ LessonsData }) => {
           <Link to={`/questions/lessons/${lesson.id}`}>Take Quiz</Link>
         </div>
       </div>
-    )
-  );
+    ));
 };
 
 export default LessonDetail;
