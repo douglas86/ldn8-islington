@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./component/header/Navbar";
 import Home from "./component/home/Home";
-import LessonsData from "./LessonsData.json";
 import Quiz from "./component/quiz/Quiz";
 import Lessons from "./component/lessons/Lessons";
 import LessonDetail from "./component/lessons/LessonDetail";
@@ -18,11 +17,11 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route
             path="/lessons"
-            element={<Lessons LessonsData={LessonsData} />}
+            element={<Lessons />}
           />
           <Route
             path="/lessons/:id"
-            element={<LessonDetail LessonsData={LessonsData} />}
+            element={<LessonDetail />}
           />
           <Route path="/questions/lessons/:id" element={<Quiz />} />
 
