@@ -14,14 +14,11 @@ function NextQuestionButton({
       
     } else {
       setShowTotalScore(true);
-      setCorrect();
+     
     }
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   alert(`Please select an answer`);
-  // };
+
 
 
   return (

@@ -19,49 +19,17 @@ import "./App.css";
 const App = () => {
   return (
     <BrowserRouter>
-
-     <Navbar /> 
+      <Navbar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home/> }
-          />
-        <Route
-          path="/questions/lessons/:id"
-          element={<Quiz />}
-        />
-        <Route
-          path="/lessons"
-          element={<Lessons LessonsData={LessonsData} />}
-        />
-        <Route
-          path="/lessons/:id"
-          element={<LessonDetail LessonsData={LessonsData} />}
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/questions/lessons/:id" element={<Quiz />} />
+        <Route path="/lessons" element={<Lessons />} />
+        <Route path="/lessons/:id" element={<LessonDetail />} />
         <Route path="/teacher" element={<Teacher />} />
         <Route path="/edit-lesson/:id" element={<EditLesson />} />
+        <Route path="/post/:id" element={<Post />} />
       </Routes>
       {/* <Footer /> */}
-
-      <div>
-        <Navbar user="" />
-        <Routes>
-       
-          <Route
-            path="/lessons"
-            element={<Lessons />}
-          />
-          <Route
-            path="/lessons/:id"
-            element={<LessonDetail />}
-          />
-          <Route path="/questions/lessons/:id" element={<Quiz />} />
-
-          <Route path="/post/:id" element={<Post />} />
-        </Routes>
-      </div>
-
     </BrowserRouter>
   );
 };
