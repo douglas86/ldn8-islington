@@ -3,12 +3,12 @@ import React from "react";
 function NextQuestionButton({
   currentQuestion,
   setCurrentQuestion,
-  LessonsData,
+  questions,
   setShowTotalScore,
   disabled,
 }) {
   const nextQuestion = () => {
-    if (currentQuestion + 1 < LessonsData[0].questions.length) {
+    if (currentQuestion + 1 < questions.length) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setShowTotalScore(true);
