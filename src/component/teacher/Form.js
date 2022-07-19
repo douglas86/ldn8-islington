@@ -35,6 +35,7 @@ function Form({setLessons}) {
                content: "",
                video_url: "",
              });
+              window.location = "/teacher";
             });
           }
         });

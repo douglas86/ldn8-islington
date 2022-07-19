@@ -36,55 +36,57 @@ function EditLesson() {
   const editContent = (event) => {
     event.preventDefault();
     alert("You have submitted the edited form.");
+
     axios
       .put(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`, inputs)
       .then(() => window.location="/teacher");
   };
 
   return (
-    <div>
-      <form onSubmit={(editContent)}>
-        <input
-          placeholder="Title"
-          type="text"
-          value={inputs.title}
-          onChange={(event) => handleInputChange(event, "title")}
-        />
-        <input
-          placeholder="Image Url"
-          type="text"
-          value={inputs.img_url}
-          onChange={(event) => handleInputChange(event, "img_url")}
-        />
-        <input
-          placeholder="Intro"
-          type="text"
-          value={inputs.intro}
-          onChange={(event) => handleInputChange(event, "intro")}
-        />
-        <input
-          placeholder="Summary"
-          type="text"
-          value={inputs.summary}
-          onChange={(event) => handleInputChange(event, "summary")}
-        />
-        <input
-          placeholder="Content"
-          type="text"
-          value={inputs.content}
-          onChange={(event) => handleInputChange(event, "content")}
-        />
-        <input
-          placeholder="Video URL"
-          type="text"
-          value={inputs.video_url}
-          onChange={(event) => handleInputChange(event, "video_url")}
-        />
-        
-        <input className="submit" type="submit" value="Edit Lesson" />
-      </form>
-    </div>
-  );
-}
+  <form onSubmit={editContent}>
+    <input
+      placeholder="Title"
+      type="text"
+      value={inputs.title}
+      onChange={(event) => handleInputChange(event, "title")}
+    />
+    <input
+      placeholder="Image Url"
+      type="text"
+      value={inputs.img_url}
+      onChange={(event) => handleInputChange(event, "img_url")}
+    />
+    <input
+      placeholder="Intro"
+      type="text"
+      value={inputs.intro}
+      onChange={(event) => handleInputChange(event, "intro")}
+    />
+    <input
+      placeholder="Summary"
+      type="text"
+      value={inputs.summary}
+      onChange={(event) => handleInputChange(event, "summary")}
+    />
+    <input
+      placeholder="Content"
+      type="text"
+      value={inputs.content}
+      onChange={(event) => handleInputChange(event, "content")}
+    />
+    <input
+      placeholder="Video URL"
+      type="text"
+      value={inputs.video_url}
+      onChange={(event) => handleInputChange(event, "video_url")}
+    />
+    <input className="submit" type="submit" value="Edit Lesson" />
+  </form>
+);
+
+  };
 
 export default EditLesson;
+/*
+
+*/
