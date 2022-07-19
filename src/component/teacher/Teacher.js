@@ -4,22 +4,18 @@ import Form from "./Form";
 import AddQuestion from "./AddQuestion";
 import axios from "axios";
 
-
 function Teacher() {
   const [visible, setVisible] = useState(false);
   const [lessons, setLessons] = useState([]);
- 
 
   useEffect(() => {
-    axios.get("https://ldn8-islington.herokuapp.com/lessons/")
-    .then((res) => {
+    axios.get("https://ldn8-islington.herokuapp.com/lessons/").then((res) => {
       setLessons(res.data);
     });
   }, []);
 
-
   const deleteLessons = (arrLesson) => {
- axios
+    axios
       .delete(`https://ldn8-islington.herokuapp.com/lessons/${arrLesson.id}`)
       .then((res) => {
         if (res.status === 200) {
@@ -47,23 +43,19 @@ function Teacher() {
       </p>
       <div className="add-question">
         <p onClick={() => setVisible(true)}>Add Question</p>
-
         <p type="submit" onClick={() => setVisible(false)}>
           Cancel
         </p>
       </div>
       {visible && <AddQuestion />}
-
       <div>
         <div className="add-content">
           <p onClick={() => setVisible(true)}>Add Lesson</p>
-
           <p type="submit" onClick={() => setVisible(false)}>
             Cancel
           </p>
         </div>
-        {visible && <Form setLessons ={setLessons}/>}
-
+        {visible && <Form setLessons={setLessons} />}
         <div className="wrapper">
           {lessons.map((lesson, i) => (
             <div className="lesson-card" key={i}>

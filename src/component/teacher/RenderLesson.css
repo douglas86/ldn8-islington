@@ -2,11 +2,11 @@
   padding: 12px;
   display: grid;
   width: 100%;
-
   border-radius: 15px;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 1rem;
 }
+
 .lesson-card {
   background-color: #f9f0f8;
   padding: 8px;

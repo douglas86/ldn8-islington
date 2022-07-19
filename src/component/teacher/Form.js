@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-
 import "./Form.css"
 
 function Form({setLessons}) {
@@ -12,15 +11,13 @@ function Form({setLessons}) {
     content: "",
     video_url: "",
   });
-  console.log(inputs);
-
+  
   const handleInputChange = (event, names) => {
     setInputs({ ...inputs, [names]: event.target.value });
   };
 
   const addContent = (event) => {
     event.preventDefault();
-
     axios
       .post("https://ldn8-islington.herokuapp.com/lessons", inputs)
       
@@ -38,13 +35,10 @@ function Form({setLessons}) {
                content: "",
                video_url: "",
              });
-             
             });
-               
-        }
-   
-      });
-  };
+          }
+        });
+      };
 
   return (
     <div>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./RenderLesson.css";
 import { Link } from "react-router-dom";
+
 const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
   return (
     <section className="lesson-card">
