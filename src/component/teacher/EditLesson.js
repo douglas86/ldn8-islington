@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Form.css";
-import { Link } from "react-router-dom";
+
 
 function EditLesson() {
   const [inputs, setInputs] = useState({
@@ -13,9 +13,6 @@ function EditLesson() {
     video_url: "",
   });
 
-  // const handleSubmit = (event) => {
-  //   
-  // };
   const queryString = window.location.search;
 
   const urlParams = new URLSearchParams(queryString);
