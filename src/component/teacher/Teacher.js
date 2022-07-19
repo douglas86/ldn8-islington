@@ -5,7 +5,8 @@ import AddQuestion from "./AddQuestion";
 import axios from "axios";
 
 function Teacher() {
-  const [visible, setVisible] = useState(false);
+  const [visibleQuestions, setVisibleQuestions] = useState(false);
+    const [visibleLessons, setVisibleLessons] = useState(false);
   const [lessons, setLessons] = useState([]);
 
   useEffect(() => {
@@ -42,20 +43,20 @@ function Teacher() {
         confidence they need to enjoy learning English.
       </p>
       <div className="add-question">
-        <p onClick={() => setVisible(true)}>Add Question</p>
-        <p type="submit" onClick={() => setVisible(false)}>
+        <p onClick={() => setVisibleQuestions(true)}>Add Question</p>
+        <p type="submit" onClick={() => setVisibleQuestions(false)}>
           Cancel
         </p>
       </div>
-      {visible && <AddQuestion />}
+      {visibleQuestions && <AddQuestion />}
       <div>
         <div className="add-content">
-          <p onClick={() => setVisible(true)}>Add Lesson</p>
-          <p type="submit" onClick={() => setVisible(false)}>
+          <p onClick={() => setVisibleLessons(true)}>Add Lesson</p>
+          <p type="submit" onClick={() => setVisibleLessons(false)}>
             Cancel
           </p>
         </div>
-        {visible && <Form setLessons={setLessons} />}
+        {visibleLessons && <Form setLessons={setLessons} />}
         <div className="wrapper">
           {lessons.map((lesson, i) => (
             <div className="lesson-card" key={i}>

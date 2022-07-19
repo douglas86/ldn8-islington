@@ -13,10 +13,9 @@ function EditLesson() {
     video_url: "",
   });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert("You have submitted the edited form.");
-  };
+  // const handleSubmit = (event) => {
+  //   
+  // };
   const queryString = window.location.search;
 
   const urlParams = new URLSearchParams(queryString);
@@ -36,23 +35,24 @@ function EditLesson() {
       [lesson_id]
     );
   }, []);
-  
+
   const editContent = (event) => {
+    event.preventDefault();
+    alert("You have submitted the edited form.");
     axios
       .put(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`, inputs)
-      .then(() => <Link to={"/teacher"} />);
+      .then(() => window.location="/teacher");
   };
 
   return (
     <div>
-      <form onSubmit={(editContent, handleSubmit)}>
+      <form onSubmit={(editContent)}>
         <input
           placeholder="Title"
           type="text"
           value={inputs.title}
           onChange={(event) => handleInputChange(event, "title")}
         />
-
         <input
           placeholder="Image Url"
           type="text"
@@ -83,7 +83,7 @@ function EditLesson() {
           value={inputs.video_url}
           onChange={(event) => handleInputChange(event, "video_url")}
         />
-
+        
         <input className="submit" type="submit" value="Edit Lesson" />
       </form>
     </div>
