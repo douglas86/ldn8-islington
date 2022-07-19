@@ -41,58 +41,32 @@ function Form({setLessons}) {
         });
       };
 
-  return (
-    <div>
-      <form onSubmit={addContent}>
-        <input
-          placeholder="Title"
-          type="text"
-          value={inputs.title}
-          onChange={(event) => handleInputChange(event, "title")}
-          required
-        />
+  const toTitles = (s) => {
+  return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase().split(",")[0];
+};
 
-        <input
-          placeholder="Image Url"
-          type="text"
-          value={inputs.img_url}
-          onChange={(event) => handleInputChange(event, "img_url")}
-        />
-        <input
-          placeholder="Intro"
-          type="text"
-          value={inputs.intro}
-          onChange={(event) => handleInputChange(event, "intro")}
-        />
-        <input
-          placeholder="Summary"
-          type="text"
-          value={inputs.summary}
-          onChange={(event) => handleInputChange(event, "summary")}
-        />
-        <input
-          placeholder="Content"
-          type="text"
-          value={inputs.content}
-          onChange={(event) => handleInputChange(event, "content")}
-        />
-        <input
-          placeholder="Video URL"
-          type="text"
-          value={inputs.video_url}
-          onChange={(event) => handleInputChange(event, "video_url")}
-        />
-
-        <input
-          onClick={addContent}
-          className="submit"
-          type="submit"
-          value="Add Lesson"
-        />
-      </form>
-
-    </div>
-  );
-}
-
+return (
+  <form onSubmit={addContent}>
+    <>
+      {Object.entries(inputs).map((items, index) => (
+        <div key={index}>
+          <input
+            placeholder={toTitles(items.toString())}
+            type="text"
+            onChange={(event) =>
+              handleInputChange(event, items.toString().split(",")[0])
+            }
+          />
+        </div>
+      ))}
+      <input
+        onClick={addContent}
+        className="submit"
+        type="submit"
+        value="Add Lesson"
+      />
+    </>
+  </form>
+);
+          }
 export default Form;
