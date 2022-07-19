@@ -32,8 +32,9 @@ function AddQuestion() {
       ],
     });
     axios
-      .post("http://localhost:6714/questions", {
-        question,
+      .post("http://localhost:9003/questions", { 
+        lesson_id:"1", image:"",
+        question:"What is the weather like today",
         answers: [
           { answer: answer_1, is_correct: false },
           { answer: answer_2, is_correct: false },
