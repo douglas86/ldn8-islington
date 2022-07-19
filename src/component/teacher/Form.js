@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./Form.css"
 
-function Form() {
+function Form({setLessons}) {
   const [inputs, setInputs] = useState({
     title: "",
     img_url: "",
@@ -19,16 +19,25 @@ function Form() {
   };
 
   const addContent = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
 
     axios
       .post("https://ldn8-islington.herokuapp.com/lessons", inputs)
+      
       .then((res) => {
-        if (res.status === 201) {
+        if (res.status === 200) {
           axios
             .get("https://ldn8-islington.herokuapp.com/lessons")
             .then((res) => {
-              setInputs(res.data);
+             setLessons(res.data);
+             setInputs({
+               title: "",
+               img_url: "",
+               intro: "",
+               summary: "",
+               content: "",
+               video_url: "",
+             });
              
             });
                

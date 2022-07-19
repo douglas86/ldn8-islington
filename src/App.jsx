@@ -14,7 +14,7 @@ import EditLesson from "./component/teacher/EditLesson";
 import Post from "./component/home/Post";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
+import "./app.css";
 
 const App = () => {
   return (

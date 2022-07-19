@@ -29,7 +29,7 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
           </button>
         )}
         {isTeacher && (
-          <button
+          <button 
             style={{ backgroundColor: "#1a8731" }}
             className="btn-2"
           >

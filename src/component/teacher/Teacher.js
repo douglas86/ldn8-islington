@@ -53,7 +53,7 @@ function Teacher() {
         </p>
       </div>
       {visible && <AddQuestion />}
-      
+
       <div>
         <div className="add-content">
           <p onClick={() => setVisible(true)}>Add Lesson</p>
@@ -62,7 +62,7 @@ function Teacher() {
             Cancel
           </p>
         </div>
-        {visible && <Form />}
+        {visible && <Form setLessons ={setLessons}/>}
 
         <div className="wrapper">
           {lessons.map((lesson, i) => (

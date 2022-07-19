@@ -36,6 +36,7 @@ function EditLesson() {
       [lesson_id]
     );
   }, []);
+  
   const editContent = (event) => {
     axios
       .put(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`, inputs)
