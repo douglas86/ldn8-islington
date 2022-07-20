@@ -1,11 +1,11 @@
 .question-card {
  
-  background: linear-gradient(to bottom, #2a0d0d 5%, #e70e0e 100%);
+  background-color: #AEDBCE;
   font-size: 22px;
   margin:6% 16%;
   border-radius: 18px;
   font-family: "Times New Roman", Times, serif;
-  color: white;
+  color: rgb(9, 9, 9);
   width: 70vw;
   padding: 2px;
   text-align: center;
@@ -30,8 +30,8 @@
 .restart-button,
 .next-question {
   box-shadow: 3px 4px 0px 0px #899599;
-  background: linear-gradient(to bottom, #2a0d0d 5%, #e70e0e 100%);
-  background-color: #ef9292;
+  background-color: #4CACBC;
+  
   border-radius: 15px;
   border: 1px solid #d6bcd6;
   display: inline-block;

@@ -1,20 +1,20 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./Card.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Card = () => {
-const [lessons, setLessons] = useState([]);
+  const [lessons, setLessons] = useState([]);
 
-      useEffect(() => {
-        axios
-          .get(`https://ldn8-islington.herokuapp.com/lessons`)
-          .then((res) => {
-            setLessons(res.data);
-          })
-          .catch((error) => console.log(error.message));
-      }, []);
-      
+  useEffect(() => {
+    axios
+      .get(`https://ldn8-islington.herokuapp.com/lessons`)
+      .then((res) => {
+        setLessons(res.data);
+      })
+      .catch((error) => console.log(error.message));
+  }, []);
+
   return lessons.map((lesson, index) => (
     <div key={index} className="card">
       <span className="title">{lesson?.title}</span>
