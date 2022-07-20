@@ -29,11 +29,9 @@ console.log(lessons)
             title="YouTube video player"
           ></iframe>
         </div>
-
         <div className="lesson-content-container">
           <p>{lesson?.summary}</p>
         </div>
-
         <div>
           <h3>Quiz</h3>
           <Link to={`/questions/lessons/${lesson.id}`}>Take Quiz</Link>
