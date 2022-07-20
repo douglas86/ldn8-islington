@@ -8,7 +8,7 @@ import Teacher from "./component/teacher/Teacher";
 import EditLesson from "./component/teacher/EditLesson";
 import Post from "./component/home/Post";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./app.css";
+import "./App.css";
 
 const App = () => {
   return (
@@ -23,7 +23,7 @@ const App = () => {
         <Route path="/edit-lesson/:id" element={<EditLesson />} />
         <Route path="/post/:id" element={<Post />} />
       </Routes>
-      </BrowserRouter>
+    </BrowserRouter>
   );
 };
 
