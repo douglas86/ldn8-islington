@@ -41,10 +41,6 @@ const App = () => {
             path="/profile"
             element={<ProtectedRoute component={Profile} />}
           />
-          <Route
-            path="/lessons"
-            element={<ProtectedRoute component={Lessons} />}
-          />
         </Routes>
       </Auth0ProviderWithRedirectCallback>
       <div>
@@ -52,11 +48,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
+            path="/lessons"
+            element={<ProtectedRoute component={Lessons} />}
+          />
+          <Route
             path="/lessons/:id"
             element={<LessonDetail />}
           />
           <Route path="/questions/lessons/:id" element={<Quiz />} />
-
           <Route path="/post/:id" element={<Post />} />
         </Routes>
       </div>
