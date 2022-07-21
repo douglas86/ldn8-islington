@@ -8,6 +8,7 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
       <h2>{lesson.title}</h2>
       <a href={lesson.img_url}>
         <img
+          className="card-image"
           style={{ width: "190px", height: "70px" }}
           src={lesson.img_url}
           alt={""}
@@ -30,10 +31,7 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
           </button>
         )}
         {isTeacher && (
-          <button 
-            style={{ backgroundColor: "#1a8731" }}
-            className="btn-2"
-          >
+          <button style={{ backgroundColor: "#1a8731" }} className="btn-2">
             <Link to={`/edit-lesson/${lesson.id}?id=${lesson.id}`}>Edit</Link>
           </button>
         )}

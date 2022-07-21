@@ -2,12 +2,17 @@
   padding: 12px;
   display: grid;
   width: 100%;
+  grid-template-columns: repeat(3, 1fr);
   border-radius: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 1rem;
+  /* 
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); */
+  gap: 3rem;
 }
 
 .lesson-card {
+  display: grid;
+  width: 500px;
+  height: 100%;
   background-color: #f9f0f8;
   padding: 8px;
   text-align: center;
@@ -23,6 +28,6 @@
   color: white;
   font-family: "Noto Sans KR", sans-serif;
   text-transform: uppercase;
-  border-radius: 5px;
+  border-radius: px;
   cursor: pointer;
 }
