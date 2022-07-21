@@ -14,7 +14,7 @@ const LessonDetail = ({ LessonsData }) => {
       .get(`https://ldn8-islington.herokuapp.com/lessons/${id}`)
       .then((res) => setLessons(res.data));
   }, [id]);
-console.log(lessons)
+
   return lessons
     .filter((lesson) => lesson.id === parseInt(id))
     .map((lesson, index) => (
