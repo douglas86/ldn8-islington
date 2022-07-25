@@ -13,7 +13,7 @@ Form {
   flex-direction: column;
 }
 
-input {
+textarea {
   padding: 5px;
   height: 4vw;
   width: 40vw;

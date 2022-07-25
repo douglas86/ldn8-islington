@@ -32,7 +32,7 @@ const Auth0ProviderWithRedirectCallback = ({ children, ...props }) => {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter className="app">
       <Auth0ProviderWithRedirectCallback
         domain={process.env.REACT_APP_AUTH0_DOMAIN}
         clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
