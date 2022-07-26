@@ -1,0 +1,15 @@
+.content {
+  font-size: 20px;
+  cursor: pointer;
+  border: 1px none rgb(214, 214, 225);
+  border-radius: 10px;
+  width: 50%;
+  margin-left: 25%;
+  display: flex;
+  gap: 8em;
+  padding: 3px;
+  margin-bottom: 2%;
+  justify-content: center;
+  background-color: #5d3636;
+  color: white;
+}

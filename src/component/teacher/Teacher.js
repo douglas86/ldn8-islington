@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import RenderLesson from "./RenderLesson";
-import Form from "./Form";
 import AddQuestion from "./AddQuestion";
 import axios from "axios";
 import TeacherTemplate from "./template/TeacherTemplate";
 
 function Teacher() {
   const [visibleQuestions, setVisibleQuestions] = useState(false);
-  const [visibleLessons, setVisibleLessons] = useState(false);
+  const [visibleLessons, setVisibleLessons] = useState(true);
   const [lessons, setLessons] = useState([]);
-  const [flag, setFlag] = useState(false);
 
   useEffect(() => {
     axios.get("https://ldn8-islington.herokuapp.com/lessons/").then((res) => {
@@ -52,14 +50,17 @@ function Teacher() {
       </div>
       {visibleQuestions && <AddQuestion />}
       <div>
-        <div className="add-content">
-          <p onClick={() => setVisibleLessons(true)}>Add Lesson</p>
-          <p type="submit" onClick={() => setVisibleLessons(false)}>
-            Cancel
-          </p>
-        </div>
-        {visibleLessons && <Form setLessons={setLessons} />}
-        <TeacherTemplate flag={flag} />
+        {/*<div className="add-content">*/}
+        {/*  <p onClick={() => setVisibleLessons(true)}>Add Lesson</p>*/}
+        {/*  <p type="submit" onClick={() => setVisibleLessons(false)}>*/}
+        {/*    Cancel*/}
+        {/*  </p>*/}
+        {/*</div>*/}
+        {/*{visibleLessons && <Form setLessons={setLessons} />}*/}
+        <TeacherTemplate
+          visibleLessons={visibleLessons}
+          setVisibleLessons={setVisibleLessons}
+        />
         <div className="wrapper">
           {lessons.map((lesson, i) => (
             <div className="lesson-card" key={i}>
