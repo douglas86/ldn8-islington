@@ -8,7 +8,7 @@ Form {
 Form {
   background-color: linear-gradient(rgb(59, 17, 17), rgb(248, 248, 241));
   border: 1px solid rgb(223, 213, 213);
-  
+
   display: flex;
   flex-direction: column;
 }

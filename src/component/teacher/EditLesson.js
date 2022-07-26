@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Form.css";
-import RichText from "./RichText";
 
 function EditLesson() {
-  const [id, setId] = useState("")
+  const [id, setId] = useState("");
   const [inputs, setInputs] = useState({
     title: "",
     img_url: "",
@@ -23,7 +22,7 @@ function EditLesson() {
 
   const handleInputChange = (event, names) => {
     setInputs({ ...inputs, [names]: event.target.value });
-   // console.log(inputs);
+    // console.log(inputs);
   };
 
   useEffect(() => {
@@ -31,8 +30,9 @@ function EditLesson() {
       .get(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`)
       .then((res) => {
         //console.log(res)
-        const { id, title, img_url, intro, summary, content, video_url } = res.data[0]
-        setId(id)
+        const { id, title, img_url, intro, summary, content, video_url } =
+          res.data[0];
+        setId(id);
         setInputs({
           title,
           img_url,
@@ -40,11 +40,11 @@ function EditLesson() {
           summary,
           video_url,
         });
-        setContent(content)
+        setContent(content);
       });
   }, [lesson_id]);
 
-   //console.log("content", content);
+  //console.log("content", content);
 
   const editContent = (event) => {
     event.preventDefault();
@@ -56,9 +56,9 @@ function EditLesson() {
       .then(() => (window.location = "/teacher"));
   };
 
-   const toTitles = (s) => {
-     return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase().split(",")[0];
-   };
+  const toTitles = (s) => {
+    return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase().split(",")[0];
+  };
 
   return (
     <form onSubmit={editContent}>
@@ -74,7 +74,6 @@ function EditLesson() {
           />
         </div>
       ))}
-      <RichText content={content} setContent={setContent} />
       <button className="submit" type="submit">
         Edit Lesson
       </button>

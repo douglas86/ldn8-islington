@@ -3,11 +3,13 @@ import RenderLesson from "./RenderLesson";
 import Form from "./Form";
 import AddQuestion from "./AddQuestion";
 import axios from "axios";
+import TeacherTemplate from "./template/TeacherTemplate";
 
 function Teacher() {
   const [visibleQuestions, setVisibleQuestions] = useState(false);
   const [visibleLessons, setVisibleLessons] = useState(false);
   const [lessons, setLessons] = useState([]);
+  const [flag, setFlag] = useState(false);
 
   useEffect(() => {
     axios.get("https://ldn8-islington.herokuapp.com/lessons/").then((res) => {
@@ -57,6 +59,7 @@ function Teacher() {
           </p>
         </div>
         {visibleLessons && <Form setLessons={setLessons} />}
+        <TeacherTemplate flag={flag} />
         <div className="wrapper">
           {lessons.map((lesson, i) => (
             <div className="lesson-card" key={i}>
