@@ -8,14 +8,15 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
       <h2>{lesson.title}</h2>
       <a href={lesson.img_url}>
         <img
+          className="card-image"
           style={{ width: "190px", height: "70px" }}
           src={lesson.img_url}
           alt={""}
         />
       </a>
-      <h5>{lesson.intro}</h5>
-      <p>{lesson.summary}</p>
-      <p>{lesson.content}</p>
+      <h5 className="intro">{lesson.intro}</h5>
+      <p className="summary">{lesson.summary}</p>
+      <p className="content">{lesson.content}</p>
       <iframe
         src={`https://www.youtube.com/embed/${lesson.video_url.split("v=")[1]}`}
         title="YouTube video player"
@@ -30,10 +31,7 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
           </button>
         )}
         {isTeacher && (
-          <button 
-            style={{ backgroundColor: "#1a8731" }}
-            className="btn-2"
-          >
+          <button style={{ backgroundColor: "#1a8731" }} className="btn-2">
             <Link to={`/edit-lesson/${lesson.id}?id=${lesson.id}`}>Edit</Link>
           </button>
         )}

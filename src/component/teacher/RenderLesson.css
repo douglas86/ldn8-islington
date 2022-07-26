@@ -1,4 +1,4 @@
-.wrapper {
+.lesson-wrapper {
   padding: 12px;
   display: grid;
   width: 100%;
@@ -11,6 +11,12 @@
   background-color: #f9f0f8;
   padding: 8px;
   text-align: center;
+}
+.summary, .intro{
+  height: 80px;
+}
+.content{
+    height: 200px;
 }
 
 .btn-1,

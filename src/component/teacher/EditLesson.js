@@ -3,13 +3,14 @@ import axios from "axios";
 import "./Form.css";
 
 function EditLesson() {
-
+  const [questions, setQuestions] = useState([]);
+  const [load, setLoad] = useState(false);
   const [inputs, setInputs] = useState({
     title: "",
     img_url: "",
     intro: "",
     summary: "",
-   content: "",
+    content: "",
     video_url: "",
   });
 
@@ -21,31 +22,17 @@ function EditLesson() {
 
   const handleInputChange = (event, names) => {
     setInputs({ ...inputs, [names]: event.target.value });
-   // console.log(inputs);
+    console.log(inputs);
   };
-
-  useEffect(() => {
+  const handleDelete = (Qid) => {
     axios
-      .get(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`)
-      .then((res) => {
-       
-        const { title, img_url, intro, summary, content, video_url } = res.data[0]
-      
-        setInputs({
-          title,
-          img_url,
-          intro,
-          summary,
-          content,
-          video_url,
-        });
-       
-      });
-  }, [lesson_id]);
-
+      .delete(`https://ldn8-islington.herokuapp.com/questions/${Qid}`)
+      .then(() => {
+        setLoad(true);
+      }, []);
+  };
   const editContent = (event) => {
     event.preventDefault();
-  
     alert("You have submitted the edited form.");
 
     axios
@@ -53,32 +40,83 @@ function EditLesson() {
       .then(() => (window.location = "/teacher"));
   };
 
-   const toTitles = (s) => {
-     return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase().split(",")[0];
-   };
+  useEffect(() => {
+    axios
+      .get(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`)
+      .then((res) => {
+        setInputs(res.data[0]);
+      });
+  }, [lesson_id]);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://ldn8-islington.herokuapp.com/questions/lessons/${lesson_id}`
+      )
+      .then(
+        (res) => {
+          setQuestions(res.data);
+        },
+        [lesson_id]
+      );
+  }, [lesson_id, load]);
 
   return (
     <form onSubmit={editContent}>
-      {Object.entries(inputs).map((items, index) => (
-        <div key={index}>
-          <textarea
-            placeholder={toTitles(items.toString())}
-            type="text"
-            value={items.toString().split(",")[1]}
-            onChange={(event) =>
-              handleInputChange(event, items.toString().split(",")[0])
-            }
-          />
-        </div>
-      ))}
-      <button className="submit" type="submit">
-        Edit Lesson
-      </button>
+      <input
+        placeholder="Title"
+        type="text"
+        value={inputs.title}
+        onChange={(event) => handleInputChange(event, "title")}
+      />
+      <input
+        placeholder="Image Url"
+        type="text"
+        value={inputs.img_url}
+        onChange={(event) => handleInputChange(event, "img_url")}
+      />
+      <input
+        placeholder="Intro"
+        type="text"
+        value={inputs.intro}
+        onChange={(event) => handleInputChange(event, "intro")}
+      />
+
+      <textarea
+        placeholder="Summary"
+        type="text"
+        value={inputs.summary}
+        onChange={(event) => handleInputChange(event, "summary")}
+      />
+      <input
+        placeholder="Content"
+        type="text"
+        value={inputs.content}
+        onChange={(event) => handleInputChange(event, "content")}
+      />
+      <input
+        placeholder="Video URL"
+        type="text"
+        value={inputs.video_url}
+        onChange={(event) => handleInputChange(event, "video_url")}
+      />
+      <section className="q-section">
+        <h3>Questions For Lesson {lesson_id}</h3>
+        {questions.map((q) => {
+          return (
+            <div>
+              <div className="delete-question">{q.question}</div>
+              <button className="q-delete" onClick={() => handleDelete(q.id)}>
+                Delete
+              </button>
+            </div>
+          );
+        })}
+      </section>
+
+      <input className="edit-lesson" type="submit" value="Edit Lesson" />
     </form>
   );
 }
 
 export default EditLesson;
-/*
-
-*/
