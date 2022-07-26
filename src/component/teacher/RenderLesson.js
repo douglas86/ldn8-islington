@@ -14,9 +14,9 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
           alt={""}
         />
       </a>
-      <h5>{lesson.intro}</h5>
-      <p>{lesson.summary}</p>
-      <p>{lesson.content}</p>
+      <h5 className="intro">{lesson.intro}</h5>
+      <p className="summary">{lesson.summary}</p>
+      <p className="content">{lesson.content}</p>
       <iframe
         src={`https://www.youtube.com/embed/${lesson.video_url.split("v=")[1]}`}
         title="YouTube video player"

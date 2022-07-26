@@ -58,7 +58,7 @@ function Teacher() {
           </p>
         </div>
         {visibleLessons && <Form setLessons={setLessons} />}
-        <div className="wrapper">
+        <div className="lesson-wrapper">
           {lessons.map((lesson, i) => (
             <div className="lesson-card" key={i}>
               <RenderLesson

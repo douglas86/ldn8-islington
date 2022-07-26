@@ -20,9 +20,14 @@ function AddQuestion() {
     setValues({ ...values, [names]: event.target.value });
   };
   const handleRadioChange = (event, names) => {
- 
-    setValues({ ...values, ["isCorrect_1"]: false,["isCorrect_2"]: false,
-    ["isCorrect_3"]:false,["isCorrect_4"]:false,[names]: event.target.checked });
+    setValues({
+      ...values,
+      ["isCorrect_1"]: false,
+      ["isCorrect_2"]: false,
+      ["isCorrect_3"]: false,
+      ["isCorrect_4"]: false,
+      [names]: event.target.checked,
+    });
   };
 
   const addQuestion = (event) => {
@@ -39,19 +44,10 @@ function AddQuestion() {
       isCorrect_3,
       isCorrect_4,
     } = values;
-    
-    console.log("answers", {
-      question,
-      answers: [
-        { answer: answer_1, is_correct: isCorrect_1 },
-        { answer: answer_2, is_correct: isCorrect_2 },
-        { answer: answer_3, is_correct: isCorrect_3 },
-        { answer: answer_4, is_correct: isCorrect_4 },
-      ],
-    });
+
     axios
       .post("https://ldn8-islington.herokuapp.com/questions", {
-        lesson_id: 19,
+        lesson_id: 1,
         image: "",
         question: question,
         answers: [
@@ -64,9 +60,20 @@ function AddQuestion() {
       .then((res) => (window.location = "/teacher"));
   };
 
+  const handleChange = (e) => {
+    setValues({ values: e.target.values });
+  };
+
   return (
     <div>
       <form onSubmit={addQuestion}>
+        <select onChange={handleChange}>
+          <option value="lesson-one">Lesson One</option>
+          <option value="lesson-two">Lesson Two</option>
+          <option value="lesson-three">Lesson Three</option>
+          <option value="lesson-four">Lesson Four</option>
+          <option value="lesson-five">Lesson Five</option>
+        </select>
         <input
           placeholder="Question"
           type="text"

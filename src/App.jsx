@@ -11,7 +11,7 @@ import Post from "./component/home/Post";
 import { Route, BrowserRouter, Routes, useNavigate  } from 'react-router-dom';
 import { Auth0Provider, withAuthenticationRequired  } from '@auth0/auth0-react';
 //import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
+import "./app.css";
 
 const ProtectedRoute = ({ component, ...args }) => {
   const Component = withAuthenticationRequired(component, args);
@@ -48,7 +48,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/questions/lessons/:id" element={<Quiz />} />
+        <Route path="/questions/lessons/:id" element={<Quiz/>} />
         <Route path="/lessons" element={<Lessons />} />
         <Route path="/lessons/:id" element={<LessonDetail />} />
         <Route path="/teacher" element={<Teacher />} />
