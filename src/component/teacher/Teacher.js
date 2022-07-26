@@ -6,7 +6,7 @@ import axios from "axios";
 
 function Teacher() {
   const [visibleQuestions, setVisibleQuestions] = useState(false);
-    const [visibleLessons, setVisibleLessons] = useState(false);
+  const [visibleLessons, setVisibleLessons] = useState(false);
   const [lessons, setLessons] = useState([]);
 
   useEffect(() => {
@@ -24,7 +24,6 @@ function Teacher() {
             .get("https://ldn8-islington.herokuapp.com/lessons/")
             .then((res) => {
               setLessons(res.data);
-             
             });
         }
       });

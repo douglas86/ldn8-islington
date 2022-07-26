@@ -1,4 +1,4 @@
-.lessonContent {
+/* .lessonContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +28,7 @@ img .image {
 @media (min-width: 600px) {
   .lessonContent {
     margin: 100px;
-    /* background: #daf2f5; */
+    background: #daf2f5;
   }
   .image-container {
     margin: 0 60px;
@@ -44,4 +44,46 @@ img .image {
     width: 800px;
     object-fit: cover;
   }
+} */
+
+.lessonContent {
+  margin: 15px auto 0;
+  padding: 15px;
+  max-width: 1400px;
+  min-height: 100vh;
+}
+
+.image-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.lesson-details-body{
+  margin: 15px auto 0;
+  padding: 15px;
+  max-width: 1400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.link{
+  text-decoration: none;
+}
+
+iframe {
+  width: 80%;
+  height: 70%;
+}
+
+@media only screen and (max-width: 800px) {
+  /* iframe {
+  width: 400px;
+  height: 300px;
+} */
+iframe {
+  width: 250px;
+  height: 250px;
+}
 }

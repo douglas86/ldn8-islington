@@ -1,16 +1,16 @@
-.navbar {
+/* .navbar {
   height: 100px;
-  background-color: grey;
-  color: white;
+  background-color: #f3d235;
+  color: gray;
   display: flex;
   align-items: center;
   justify-content: space-around;
-}
-
+} */
+/* 
 .logo {
   font-size: 20px;
   font-weight: bold;
-}
+} */
 
 .list {
   display: flex;
@@ -36,6 +36,7 @@
   padding: 50px 100px;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 .card {
