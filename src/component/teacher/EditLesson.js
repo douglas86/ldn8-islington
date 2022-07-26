@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Form.css";
-import RichText from "./RichText";
 
 function EditLesson() {
-  //const [id, setId] = useState("")
+
   const [inputs, setInputs] = useState({
     title: "",
     img_url: "",
     intro: "",
     summary: "",
-    // content: "",
+   content: "",
     video_url: "",
   });
-  const [content, setContent] = useState("");
-  const { title, img_url, intro, summary, video_url } = inputs;
+
   const queryString = window.location.search;
 
   const urlParams = new URLSearchParams(queryString);
@@ -30,30 +28,28 @@ function EditLesson() {
     axios
       .get(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`)
       .then((res) => {
-        //console.log(res)
+       
         const { title, img_url, intro, summary, content, video_url } = res.data[0]
-       // setId(id)
+      
         setInputs({
           title,
           img_url,
           intro,
           summary,
+          content,
           video_url,
         });
-        setContent(content)
+       
       });
   }, [lesson_id]);
 
-   //console.log("content", content);
-
   const editContent = (event) => {
     event.preventDefault();
-    //add id,
-    const body = { title, img_url, intro, summary, content, video_url };
+  
     alert("You have submitted the edited form.");
 
     axios
-      .put(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`, body)
+      .put(`https://ldn8-islington.herokuapp.com/lessons/${lesson_id}`, inputs)
       .then(() => (window.location = "/teacher"));
   };
 
@@ -75,7 +71,6 @@ function EditLesson() {
           />
         </div>
       ))}
-      <RichText content={content} setContent={setContent} />
       <button className="submit" type="submit">
         Edit Lesson
       </button>

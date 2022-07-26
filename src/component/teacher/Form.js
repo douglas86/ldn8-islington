@@ -12,7 +12,6 @@ function Form({ setLessons }) {
     video_url: "",
   });
 
-  //const [content, setContent] = useState("<h1>React Hook for Quill!</h1>");
 
   const handleInputChange = (event, names) => {
     setInputs({ ...inputs, [names]: event.target.value });
