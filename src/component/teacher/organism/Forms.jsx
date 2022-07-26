@@ -34,7 +34,13 @@ const Forms = () => {
 
   return (
     <Container>
-      <Form style={{ margin: "10px" }} onSubmit={handleSubmit}>
+      <Form
+        style={{
+          justifyContent: "center",
+          margin: "auto",
+        }}
+        onSubmit={handleSubmit}
+      >
         <>
           {Object.entries(inputs).map((items, index) => {
             return <div key={index}>{forms(items, handleChange)}</div>;
@@ -45,7 +51,7 @@ const Forms = () => {
             initialValue={initialValue}
           />
         </>
-        <Button varaint="primary" type="submit" style={{ marginTop: "3rem" }}>
+        <Button variant="primary" type="submit" style={{ marginTop: "3rem" }}>
           Submit
         </Button>
       </Form>
