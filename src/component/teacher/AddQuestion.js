@@ -22,10 +22,10 @@ function AddQuestion() {
   const handleRadioChange = (event, names) => {
     setValues({
       ...values,
-      ["isCorrect_1"]: false,
-      ["isCorrect_2"]: false,
-      ["isCorrect_3"]: false,
-      ["isCorrect_4"]: false,
+      'isCorrect_1': false,
+      'isCorrect_2': false,
+      'isCorrect_3': false,
+      'isCorrect_4': false,
       [names]: event.target.checked,
     });
   };
