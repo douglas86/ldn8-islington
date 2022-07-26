@@ -1,20 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useQuill } from "react-quilljs";
 
 import { quillModules } from "../atom/quill-modules";
 
 import "quill/dist/quill.snow.css";
 
-const RichText = ({ content, setContent }) => {
+const RichText = ({ content, setContent, initialValue }) => {
+  const [value, setValue] = useState(true);
   const { quill, quillRef } = useQuill({ modules: quillModules });
 
   useEffect(() => {
     if (quill) {
-      quill.on("text-change", () => {
-        setContent(quillRef.current.firstChild.innerHTML);
-      });
+      if (initialValue !== "" && value) {
+        quill.clipboard.dangerouslyPasteHTML(initialValue);
+        setValue(false);
+      } else {
+        quill.on("text-change", () => {
+          setContent(quillRef.current.firstChild.innerHTML);
+        });
+      }
     }
-  }, [content, quill, quillRef, setContent]);
+  }, [content, initialValue, quill, quillRef, setContent, value]);
 
   return (
     <div

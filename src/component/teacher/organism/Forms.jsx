@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { Button, Container } from "react-bootstrap";
 import { forms } from "../molecule/forms";
 import RichText from "./RichText";
 import axios from "axios";
 
-const Forms = ({ value }) => {
+const Forms = () => {
   const [inputs, setInputs] = useState({
     title: "",
     img_url: "",
@@ -14,6 +14,7 @@ const Forms = ({ value }) => {
     video_url: "",
   });
   const [content, setContent] = useState(undefined);
+  const initialValue = "";
 
   const { title, img_url, intro, summary, video_url } = inputs;
 
@@ -31,19 +32,6 @@ const Forms = ({ value }) => {
     setInputs({ ...inputs, [name]: e });
   };
 
-  useEffect(() => {
-    if (Object.keys(value).length !== 0) {
-      setInputs({
-        title: value.title,
-        img_url: value.img_url,
-        intro: value.intro,
-        summary: value.summary,
-        video_url: value.video_url,
-      });
-      setContent(value.content);
-    }
-  }, [value]);
-
   return (
     <Container>
       <Form style={{ margin: "10px" }} onSubmit={handleSubmit}>
@@ -51,7 +39,11 @@ const Forms = ({ value }) => {
           {Object.entries(inputs).map((items, index) => {
             return <div key={index}>{forms(items, handleChange)}</div>;
           })}
-          <RichText content={content} setContent={setContent} />
+          <RichText
+            content={content}
+            setContent={setContent}
+            initialValue={initialValue}
+          />
         </>
         <Button varaint="primary" type="submit" style={{ marginTop: "3rem" }}>
           Submit

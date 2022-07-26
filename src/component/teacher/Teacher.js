@@ -6,7 +6,7 @@ import TeacherTemplate from "./template/TeacherTemplate";
 
 function Teacher() {
   const [visibleQuestions, setVisibleQuestions] = useState(false);
-  const [visibleLessons, setVisibleLessons] = useState(true);
+  const [visibleLessons, setVisibleLessons] = useState(false);
   const [lessons, setLessons] = useState([]);
 
   useEffect(() => {

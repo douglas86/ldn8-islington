@@ -1,5 +1,6 @@
 import "./RenderLesson.css";
 import { Link } from "react-router-dom";
+import parse from "html-react-parser";
 
 const RenderLesson = ({ lesson, isTeacher, deleteLessons }) => {
   return (
@@ -14,7 +15,7 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons }) => {
       </a>
       <h5>{lesson.intro}</h5>
       <p>{lesson.summary}</p>
-      <p>{lesson.content}</p>
+      {parse(lesson.content)}
       <iframe
         src={`https://www.youtube.com/embed/${lesson.video_url.split("v=")[1]}`}
         title="YouTube video player"
