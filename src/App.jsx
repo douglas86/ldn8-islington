@@ -11,7 +11,7 @@ import Post from "./component/home/Post";
 import { Route, BrowserRouter, Routes, useNavigate  } from 'react-router-dom';
 import { Auth0Provider, withAuthenticationRequired  } from '@auth0/auth0-react';
 //import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./app.css";
+import "./App.css";
 
 const ProtectedRoute = ({ component, ...args }) => {
   const Component = withAuthenticationRequired(component, args);
