@@ -23,7 +23,6 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons }) => {
       </a>
       <h5 className="intro">{lesson.intro}</h5>
       <p className="summary">{lesson.summary}</p>
-
       <p
         className="content"
         onClick={() => {
@@ -51,7 +50,7 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons }) => {
         {isTeacher && (
           <button style={{ backgroundColor: "#1a8731" }} className="btn-2">
             <Link
-              style={{ color: "white" }}
+              style={{ color: "white", textDecoration:"none" }}
               to={`/edit-lesson/${lesson.id}?id=${lesson.id}`}
             >
               Edit
