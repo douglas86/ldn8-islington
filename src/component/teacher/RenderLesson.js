@@ -2,14 +2,14 @@ import { useState } from "react";
 import "./RenderLesson.css";
 import { Link } from "react-router-dom";
 
-const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
-   const [readMore, setReadMore] = useState(false);
-      const content = (
-        <div>
-          <p className="content">{lesson.content}</p>
-        </div>
-      );
-    const WholeContent = readMore ? "Read Less << " : "Read More >> ";
+const RenderLesson = ({ lesson, isTeacher, deleteLessons }) => {
+  const [readMore, setReadMore] = useState(false);
+  const content = (
+    <div>
+      <p className="content">{lesson.content}</p>
+    </div>
+  );
+  const WholeContent = readMore ? "Read Less << " : "Read More >> ";
   return (
     <section className="lesson-card">
       <h2>{lesson.title}</h2>
