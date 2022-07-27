@@ -29,9 +29,66 @@ h1 {
   margin-top: 3%;
   color: #3f4e4f;
 }
+
+.edit-lesson {
+  background: #1a8731;
+  color: #e6e6e6;
+  font-weight: lighter;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  text-shadow: none;
+} */
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+.add-content,
+.add-question {
+  font-size: 20px;
+  cursor: pointer;
+  border: 1px solid rgb(214, 214, 225);
+  border-style: none;
+  border-radius: 10px;
+  width: 50%;
+  margin-left: 25%;
+  display: flex;
+  gap: 8em;
+  padding: 3px;
+  margin-bottom: 2%;
+  justify-content: center;
+  background-image: linear-gradient(rgba(2, 27, 40, 0), #14516b);
+
+}
+.lesson-plan,
+Form {
+  width: 50vw;
+  margin: 3% 25%;
+  border-style: none;
+  border-radius: 10px;
+}
 .submit-question,
-.submit-lesson,
-.edit-lesson,
 .q-delete {
   font-size: 15px;
   font-family: Arial;
@@ -85,62 +142,4 @@ textarea {
   box-shadow: 5px 10px #888888;
   margin: 10% 5%;
   width: 400px;
-}
-
-.edit-lesson {
-  background: #1a8731;
-  color: #e6e6e6;
-  font-weight: lighter;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 18px;
-  text-shadow: none;
-} */
-
-input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-.add-content,
-.add-question {
-  font-size: 20px;
-  cursor: pointer;
-  border: 1px solid rgb(214, 214, 225);
-  border-style: none;
-  border-radius: 10px;
-  width: 50%;
-  margin-left: 25%;
-  display: flex;
-  gap: 8em;
-  padding: 3px;
-  margin-bottom: 2%;
-  justify-content: center;
-  background-color: #5d3636;
-  color: white;
-}
-.lesson-plan,
-Form {
-  width: 50vw;
-  margin: 3% 25%;
-  border-style: none;
-  border-radius: 10px;
 }
