@@ -8,9 +8,8 @@ import LessonDetail from "./component/lessons/LessonDetail";
 import Teacher from "./component/teacher/Teacher";
 import EditLesson from "./component/teacher/EditLesson";
 import Post from "./component/home/Post";
-import { Route, BrowserRouter, Routes, useNavigate  } from 'react-router-dom';
-import { Auth0Provider, withAuthenticationRequired  } from '@auth0/auth0-react';
-//import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
 import "./App.css";
 
 const ProtectedRoute = ({ component, ...args }) => {
@@ -18,44 +17,28 @@ const ProtectedRoute = ({ component, ...args }) => {
   return <Component />;
 };
 
-const Auth0ProviderWithRedirectCallback = ({ children, ...props }) => {
-  const navigate = useNavigate();
-  const onRedirectCallback = (appState) => {
-    navigate((appState && appState.returnTo) || window.location.pathname);
-  };
-  return (
-    <Auth0Provider onRedirectCallback={onRedirectCallback} {...props}>
-      {children}
-    </Auth0Provider>
-  );
-};
-
 const App = () => {
   return (
-    <BrowserRouter>
-      <Auth0ProviderWithRedirectCallback
-        domain={process.env.REACT_APP_AUTH0_DOMAIN}
-        clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
-        redirectUri={window.location.origin}
-      >
-        <Routes>
-          <Route
-            path="/profile"
-            element={<ProtectedRoute component={Profile} />}
-          />
-        </Routes>
-      </Auth0ProviderWithRedirectCallback>
+    <>
       <Navbar />
       <Routes>
+        <Route
+          path="/teacher"
+          element={<ProtectedRoute component={Teacher} />}
+        />
+        <Route
+          path="/profile"
+          element={<ProtectedRoute component={Profile} />}
+        />
         <Route path="/" element={<Home />} />
         <Route path="/questions/lessons/:id" element={<Quiz/>} />
         <Route path="/lessons" element={<Lessons />} />
         <Route path="/lessons/:id" element={<LessonDetail />} />
-        <Route path="/teacher" element={<Teacher />} />
+        {/* <Route path="/teacher" element={<Teacher />} /> */}
         <Route path="/edit-lesson/:id" element={<EditLesson />} />
         <Route path="/post/:id" element={<Post />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 };
 
