@@ -1,9 +1,17 @@
 //import { appBarClasses } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
-import "./Form.css";
+import "./addQuestion.css";
 
 function AddQuestion() {
+  const [lesson, setLesson] = useState(1);
+
+  const handleLessonChange = (e) => {
+    let lesson_id = e.target.value;
+
+    setLesson(lesson_id);
+  };
+
   const [values, setValues] = useState({
     question: "",
     answer_1: "",
@@ -47,7 +55,7 @@ function AddQuestion() {
 
     axios
       .post("https://ldn8-islington.herokuapp.com/questions", {
-        lesson_id: 1,
+        lesson_id: lesson,
         image: "",
         question: question,
         answers: [
@@ -60,19 +68,15 @@ function AddQuestion() {
       .then((res) => (window.location = "/teacher"));
   };
 
-  const handleChange = (e) => {
-    setValues({ values: e.target.values });
-  };
-
   return (
     <div>
       <form onSubmit={addQuestion}>
-        <select onChange={handleChange}>
-          <option value="lesson-one">Lesson One</option>
-          <option value="lesson-two">Lesson Two</option>
-          <option value="lesson-three">Lesson Three</option>
-          <option value="lesson-four">Lesson Four</option>
-          <option value="lesson-five">Lesson Five</option>
+        <select onChange={handleLessonChange}>
+          <option value="1">Lesson One</option>
+          <option value="2">Lesson Two</option>
+          <option value="3">Lesson Three</option>
+          <option value="4">Lesson Four</option>
+          <option value="5">Lesson Five</option>
         </select>
         <input
           placeholder="Question"
@@ -141,7 +145,7 @@ function AddQuestion() {
 
         <input
           onClick={addQuestion}
-          className="submit-question"
+          // className="submit-question"
           type="submit"
           value="Add question"
         />
