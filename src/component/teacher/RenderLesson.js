@@ -2,7 +2,7 @@ import React from "react";
 import "./RenderLesson.css";
 import { Link } from "react-router-dom";
 
-const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
+const RenderLesson = ({ lesson, isTeacher, deleteLessons }) => {
   return (
     <section className="lesson-card">
       <h2>{lesson.title}</h2>
@@ -16,7 +16,7 @@ const RenderLesson = ({ lesson, isTeacher, deleteLessons}) => {
       </a>
       <h5 className="intro">{lesson.intro}</h5>
       <p className="summary">{lesson.summary}</p>
-      <p className="content">{lesson.content}</p>
+      <p className="content">{lesson.content.slice(0, 30)}</p>
       <iframe
         src={`https://www.youtube.com/embed/${lesson.video_url.split("v=")[1]}`}
         title="YouTube video player"

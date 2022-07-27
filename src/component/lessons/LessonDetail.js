@@ -32,35 +32,42 @@ const LessonDetail = ({ LessonsData }) => {
     .filter((lesson) => lesson.id === parseInt(id))
     .map((lesson, index) => (
       <div key={index} className="lessonContent">
-        <h1>{lesson?.title}</h1>
+        <div className="title-container">
+          <h1>{lesson?.title}</h1>
+        </div>
+
         <div className="lesson-details-body">
-          <div className="image-container">
-            <img
-              /*className="image" */ src={lesson?.img_url}
-              alt="avatar_img"
-            />
-          </div>
+          {/* <div className="image-container">
+            <img className="image" src={lesson?.img_url} alt="avatar_img" />
+          </div> */}
 
           <div>
             <div className="lesson-content-container">
               <div className="frame">
                 <iframe
+                  className="iframe"
                   src={base_url + lesson?.video_url.slice(-11)}
                   title="YouTube video player"
                 ></iframe>
               </div>
               <p>{lesson?.summary}</p>
             </div>
-            <Markdown children={lesson?.content} />
+            <Markdown className="markdown" children={lesson?.content} />
             <div>
-              <h3>Quiz</h3>
-              <p>
+              {/* <h3 style={{ color: "#178be9", fontSize: "900" }}>Quiz</h3> */}
+              <p
+                style={{
+                  color: "#178be9",
+                  fontWeight: "bold",
+                  fontSize: "20px",
+                }}
+              >
                 Test your knowledge to Improve your english knowledge. Sharpen
                 your mind and your reading and speaking skills. Get smarter with
                 Islington quizzes.
               </p>
-              <Button variant="outlined">
-                <Link className="link" to={`/questions/lessons/${lesson.id}`}>
+              <Button variant="outlined" size="large" fontSize="large">
+                <Link style={{fontSize:"2rem"}} className="link" to={`/questions/lessons/${lesson.id}`}>
                   Take Quiz
                 </Link>
               </Button>

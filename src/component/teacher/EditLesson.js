@@ -88,7 +88,7 @@ function EditLesson() {
         value={inputs.summary}
         onChange={(event) => handleInputChange(event, "summary")}
       />
-      <input
+      <textarea
         placeholder="Content"
         type="text"
         value={inputs.content}
