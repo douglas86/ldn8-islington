@@ -1,8 +1,7 @@
 .question-card {
- 
-  background-color: #AEDBCE;
+  background-color: #aedbce;
   font-size: 22px;
-  margin:6% 16%;
+  margin: 6% 16%;
   border-radius: 18px;
   font-family: "Times New Roman", Times, serif;
   color: rgb(9, 9, 9);
@@ -29,25 +28,24 @@
 }
 .restart-button,
 .next-question {
-  box-shadow: 3px 4px 0px 0px #899599;
-  background-color: #4CACBC;
-  
+  box-shadow: 3px 4px 0 0 #899599;
+  background-color: #4cacbc;
+
   border-radius: 15px;
   border: 1px solid #d6bcd6;
   display: inline-block;
   cursor: pointer;
   color: rgb(250, 246, 246);
-  font-family: Arial;
+  font-family: Arial, serif;
   font-size: 17px;
   padding: 15px 25px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #e1e2ed;
+  text-shadow: 0 1px 0 #e1e2ed;
   margin-left: 35em;
   margin-top: 3em;
 }
 .restart-button:hover {
-  background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-  background-color: #bab1ba;
+  background: #bab1ba linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
 }
 .restart-button:active {
   position: relative;
@@ -55,7 +53,7 @@
 }
 .question-number {
   text-align: left;
-  margin-left: 10%; 
+  margin-left: 10%;
 }
 .score {
   text-align: right;
@@ -66,10 +64,9 @@
   text-align: center;
   margin-top: 3em;
 }
-.next-question{
+.next-question {
   margin: 5% 10em;
- 
 }
-.select{
+.select {
   background-color: green;
 }
