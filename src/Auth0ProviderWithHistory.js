@@ -12,7 +12,7 @@ export const Auth0ProviderWithHistory = ({ children }) => {
     navigate(state?.returnTo || window.location.pathname);
   };
 
-  const url = `https://62e2649b8691ce771aeda5b4--cosmic-tapioca-d01a03.netlify.app/`;
+  const url = `https://62e2649b8691ce771aeda5b4--cosmic-tapioca-d01a03.netlify.app`;
 
   return (
     <Auth0Provider
