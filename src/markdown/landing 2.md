@@ -2,7 +2,7 @@
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** Reference links are enclosed in brackets [ ] instead of parentheses 
 
 <!-- ABOUT THE PROJECT -->
 <!-- ![Benjamin Bannekat](https://octodex.github.com/images/bannekat.png) -->
@@ -31,13 +31,13 @@ Please note, if you are or are supporting a child or young person who is an asyl
 # English
 
 We have a range of online English worksheets available
-<span style="color:#826D01"><a href="http://localhost:3000/lessons"><button name="button" onclick="http://www.google.com">Go to lessons</button></a></span>
+<span style="color:#826D01"><a href="http://localhost:3000/lessons"><button name="button" onClick="http://www.google.com">Go to lessons</button></a></span>
 
 # Timetable of activities
 
 <p style="color:#826D01"><a href="https://islingtoncentre.co.uk/timetable-2022/">Click <strong>here </strong>to see our full timetable of activities.</a></p>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p alignItem="right">(<a href="#top">back to top</a>)</p>
 <!-- Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
 * You shouldn't be doing the same tasks over and over like creating a README from scratch
