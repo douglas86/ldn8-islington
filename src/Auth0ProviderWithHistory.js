@@ -18,9 +18,7 @@ export const Auth0ProviderWithHistory = ({ children }) => {
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      redirectUri={`${url}/teacher`}
-      // redirectUri={`${window.location.origin}/profile`}
-      // redirectUri={window.location.origin}
+      redirectUri={`https://62e2649b8691ce771aeda5b4--cosmic-tapioca-d01a03.netlify.app/teacher`}
       onRedirectCallback={onRedirectCallback}
     >
       {children}
